@@ -216,6 +216,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fDangNhap_FormClosed);
+            this.Load += new System.EventHandler(this.fDangNhap_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

@@ -46,18 +46,15 @@ namespace QuanLyKhachSan
             this.btnDVDnhap = new System.Windows.Forms.Button();
             this.btnDVDki = new System.Windows.Forms.Button();
             this.panelDV = new System.Windows.Forms.Panel();
-            this.btnDVDxuat = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelChuY = new System.Windows.Forms.Label();
             this.labelTenKH = new System.Windows.Forms.Label();
+            this.btnDVDxuat = new System.Windows.Forms.Button();
+            this.dtgvTimKiemKhachSan = new System.Windows.Forms.DataGridView();
+            this.labelChuY = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
             this.panelDV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTimKiemKhachSan)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -125,6 +122,7 @@ namespace QuanLyKhachSan
             this.cbxDVGia.Size = new System.Drawing.Size(107, 21);
             this.cbxDVGia.TabIndex = 1;
             this.cbxDVGia.Text = "1000000";
+            this.cbxDVGia.SelectedIndexChanged += new System.EventHandler(this.cbxDVGia_SelectedIndexChanged);
             // 
             // cbxDVSao
             // 
@@ -261,6 +259,18 @@ namespace QuanLyKhachSan
             this.panelDV.Size = new System.Drawing.Size(367, 62);
             this.panelDV.TabIndex = 13;
             // 
+            // labelTenKH
+            // 
+            this.labelTenKH.AutoSize = true;
+            this.labelTenKH.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelTenKH.Font = new System.Drawing.Font("Segoe UI", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenKH.ForeColor = System.Drawing.Color.Indigo;
+            this.labelTenKH.Location = new System.Drawing.Point(146, 3);
+            this.labelTenKH.Name = "labelTenKH";
+            this.labelTenKH.Size = new System.Drawing.Size(175, 30);
+            this.labelTenKH.TabIndex = 16;
+            this.labelTenKH.Text = "Tên khách hàng";
+            // 
             // btnDVDxuat
             // 
             this.btnDVDxuat.BackColor = System.Drawing.Color.DarkRed;
@@ -279,33 +289,14 @@ namespace QuanLyKhachSan
             this.btnDVDxuat.UseVisualStyleBackColor = false;
             this.btnDVDxuat.Click += new System.EventHandler(this.btnDVDxuat_Click);
             // 
-            // dataGridView1
+            // dtgvTimKiemKhachSan
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(50, 269);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(641, 150);
-            this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
+            this.dtgvTimKiemKhachSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTimKiemKhachSan.Location = new System.Drawing.Point(50, 269);
+            this.dtgvTimKiemKhachSan.Name = "dtgvTimKiemKhachSan";
+            this.dtgvTimKiemKhachSan.Size = new System.Drawing.Size(641, 150);
+            this.dtgvTimKiemKhachSan.TabIndex = 14;
+            this.dtgvTimKiemKhachSan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // labelChuY
             // 
@@ -318,18 +309,6 @@ namespace QuanLyKhachSan
             this.labelChuY.TabIndex = 15;
             this.labelChuY.Text = "*Click vào dòng có phòng cần đặt để đặt phòng";
             // 
-            // labelTenKH
-            // 
-            this.labelTenKH.AutoSize = true;
-            this.labelTenKH.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelTenKH.Font = new System.Drawing.Font("Segoe UI", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenKH.ForeColor = System.Drawing.Color.Indigo;
-            this.labelTenKH.Location = new System.Drawing.Point(146, 3);
-            this.labelTenKH.Name = "labelTenKH";
-            this.labelTenKH.Size = new System.Drawing.Size(175, 30);
-            this.labelTenKH.TabIndex = 16;
-            this.labelTenKH.Text = "Tên khách hàng";
-            // 
             // fBatDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,7 +316,7 @@ namespace QuanLyKhachSan
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(707, 447);
             this.Controls.Add(this.labelChuY);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgvTimKiemKhachSan);
             this.Controls.Add(this.panelDV);
             this.Controls.Add(this.panel301);
             this.Controls.Add(this.panel1);
@@ -357,7 +336,7 @@ namespace QuanLyKhachSan
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).EndInit();
             this.panelDV.ResumeLayout(false);
             this.panelDV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTimKiemKhachSan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,10 +361,7 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Button btnDVDnhap;
         private System.Windows.Forms.Button btnDVDki;
         private System.Windows.Forms.Panel panelDV;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridView dtgvTimKiemKhachSan;
         private Label labelChuY;
         private Button btnDVDxuat;
         private Label labelTenKH;

@@ -17,6 +17,11 @@ namespace QuanLyKhachSan
             InitializeComponent();
         }
 
+        #region methods
+
+        #endregion
+
+        #region events
         private void btnDki_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Đăng kí thành công", "Thông báo");
@@ -28,5 +33,7 @@ namespace QuanLyKhachSan
             fBatDau f = new fBatDau();
             f.Show();
         }
+        #endregion
+
     }
 }

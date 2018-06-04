@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKhachSan.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,17 @@ namespace QuanLyKhachSan
             InitializeComponent();
             
         }
+        
+        #region methods
 
+
+        bool DangNhapKH(string tenDangNhap, string matKhau)
+        {
+            return KhachHangDAO.Instance.DangNhap(tenDangNhap, matKhau);
+        }
+        #endregion
+
+        #region events
         private void btnDki_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -27,7 +38,7 @@ namespace QuanLyKhachSan
 
         private void btnDNDnhap_Click(object sender, EventArgs e)
         {
-            if(txbDNTenDN.Text == "nv" && txbDNMk.Text == "nv")
+            if (txbDNTenDN.Text == "nv" && txbDNMk.Text == "nv")
             {
                 this.Hide();
                 fNhanVien f = new fNhanVien();
@@ -46,6 +57,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Tên hoặc password sai");
             }
         }
+
         internal class UserInformation
         {
             public static string CurrentLoggedInUser
@@ -54,11 +66,17 @@ namespace QuanLyKhachSan
                 set;
             }
         }
-
         private void fDangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
             fBatDau f = new fBatDau();
             f.Show();
         }
+
+        private void fDangNhap_Load(object sender, EventArgs e)
+        {
+            //this.Close();
+        }
+        #endregion
+
     }
 }

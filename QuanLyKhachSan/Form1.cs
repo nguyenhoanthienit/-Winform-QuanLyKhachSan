@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +18,18 @@ namespace QuanLyKhachSan
         public fBatDau()
         {
             InitializeComponent();
+            dtgvTimKiemKhachSan.Hide();
         }
 
+        #region method
+        void Load_DichVu_TimKiem()
+        {
+            List<TimKiemKhachSan> listTimKiem = TimKiemKhachSanDAO.Instance.GetTimKiemKhachSanByAll();
+            dtgvTimKiemKhachSan.DataSource = listTimKiem;
+        }
+        #endregion
+
+        #region events
         private void btnDki_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -82,7 +94,8 @@ namespace QuanLyKhachSan
 
         private void btnDVTimKiem_Click(object sender, EventArgs e)
         {
-
+            dtgvTimKiemKhachSan.Show();
+            Load_DichVu_TimKiem();
         }
 
         public Control labelXinChao { get; set; }
@@ -93,5 +106,11 @@ namespace QuanLyKhachSan
             btnDVDxuat.Hide();
             labelTenKH.Text = null;
         }
+
+        private void cbxDVGia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
