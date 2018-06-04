@@ -46,11 +46,13 @@ namespace QuanLyKhachSan
             this.btnDVDnhap = new System.Windows.Forms.Button();
             this.btnDVDki = new System.Windows.Forms.Button();
             this.panelDV = new System.Windows.Forms.Panel();
+            this.btnDVDxuat = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelChuY = new System.Windows.Forms.Label();
+            this.labelTenKH = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
@@ -64,7 +66,7 @@ namespace QuanLyKhachSan
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label1.Location = new System.Drawing.Point(235, 52);
+            this.label1.Location = new System.Drawing.Point(235, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(322, 65);
             this.label1.TabIndex = 2;
@@ -106,10 +108,12 @@ namespace QuanLyKhachSan
             this.btnDVTimKiem.TabIndex = 5;
             this.btnDVTimKiem.Text = "TÌM KIẾM";
             this.btnDVTimKiem.UseVisualStyleBackColor = false;
+            this.btnDVTimKiem.Click += new System.EventHandler(this.btnDVTimKiem_Click);
             // 
             // cbxDVGia
             // 
-            this.cbxDVGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDVGia.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbxDVGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxDVGia.FormattingEnabled = true;
             this.cbxDVGia.Items.AddRange(new object[] {
             "1000000",
@@ -120,10 +124,12 @@ namespace QuanLyKhachSan
             this.cbxDVGia.Name = "cbxDVGia";
             this.cbxDVGia.Size = new System.Drawing.Size(107, 21);
             this.cbxDVGia.TabIndex = 1;
+            this.cbxDVGia.Text = "1000000";
             // 
             // cbxDVSao
             // 
-            this.cbxDVSao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDVSao.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbxDVSao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxDVSao.FormattingEnabled = true;
             this.cbxDVSao.Items.AddRange(new object[] {
             "1",
@@ -135,6 +141,7 @@ namespace QuanLyKhachSan
             this.cbxDVSao.Name = "cbxDVSao";
             this.cbxDVSao.Size = new System.Drawing.Size(107, 21);
             this.cbxDVSao.TabIndex = 2;
+            this.cbxDVSao.Text = "3";
             // 
             // label4
             // 
@@ -149,7 +156,8 @@ namespace QuanLyKhachSan
             // 
             // cbxDVTp
             // 
-            this.cbxDVTp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDVTp.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbxDVTp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxDVTp.FormattingEnabled = true;
             this.cbxDVTp.Items.AddRange(new object[] {
             "TPHCM",
@@ -159,6 +167,7 @@ namespace QuanLyKhachSan
             this.cbxDVTp.Name = "cbxDVTp";
             this.cbxDVTp.Size = new System.Drawing.Size(107, 21);
             this.cbxDVTp.TabIndex = 3;
+            this.cbxDVTp.Text = "TPHCM";
             // 
             // panel1
             // 
@@ -207,14 +216,14 @@ namespace QuanLyKhachSan
             // 
             // btnDVDnhap
             // 
-            this.btnDVDnhap.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnDVDnhap.BackColor = System.Drawing.Color.DarkRed;
             this.btnDVDnhap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDVDnhap.FlatAppearance.BorderSize = 0;
             this.btnDVDnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDVDnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btnDVDnhap.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDVDnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDVDnhap.Location = new System.Drawing.Point(14, 3);
+            this.btnDVDnhap.Location = new System.Drawing.Point(179, 8);
             this.btnDVDnhap.Name = "btnDVDnhap";
             this.btnDVDnhap.Size = new System.Drawing.Size(90, 23);
             this.btnDVDnhap.TabIndex = 10;
@@ -225,14 +234,14 @@ namespace QuanLyKhachSan
             // 
             // btnDVDki
             // 
-            this.btnDVDki.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnDVDki.BackColor = System.Drawing.Color.DarkRed;
             this.btnDVDki.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDVDki.FlatAppearance.BorderSize = 0;
             this.btnDVDki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDVDki.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btnDVDki.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDVDki.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDVDki.Location = new System.Drawing.Point(106, 3);
+            this.btnDVDki.Location = new System.Drawing.Point(271, 8);
             this.btnDVDki.Name = "btnDVDki";
             this.btnDVDki.Size = new System.Drawing.Size(90, 23);
             this.btnDVDki.TabIndex = 12;
@@ -243,12 +252,32 @@ namespace QuanLyKhachSan
             // 
             // panelDV
             // 
+            this.panelDV.Controls.Add(this.labelTenKH);
+            this.panelDV.Controls.Add(this.btnDVDxuat);
             this.panelDV.Controls.Add(this.btnDVDnhap);
             this.panelDV.Controls.Add(this.btnDVDki);
-            this.panelDV.Location = new System.Drawing.Point(495, 5);
+            this.panelDV.Location = new System.Drawing.Point(336, 5);
             this.panelDV.Name = "panelDV";
-            this.panelDV.Size = new System.Drawing.Size(208, 30);
+            this.panelDV.Size = new System.Drawing.Size(367, 62);
             this.panelDV.TabIndex = 13;
+            // 
+            // btnDVDxuat
+            // 
+            this.btnDVDxuat.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDVDxuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDVDxuat.FlatAppearance.BorderSize = 0;
+            this.btnDVDxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDVDxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btnDVDxuat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDVDxuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDVDxuat.Location = new System.Drawing.Point(271, 36);
+            this.btnDVDxuat.Name = "btnDVDxuat";
+            this.btnDVDxuat.Size = new System.Drawing.Size(90, 23);
+            this.btnDVDxuat.TabIndex = 13;
+            this.btnDVDxuat.Tag = "";
+            this.btnDVDxuat.Text = "ĐĂNG XUẤT";
+            this.btnDVDxuat.UseVisualStyleBackColor = false;
+            this.btnDVDxuat.Click += new System.EventHandler(this.btnDVDxuat_Click);
             // 
             // dataGridView1
             // 
@@ -289,6 +318,18 @@ namespace QuanLyKhachSan
             this.labelChuY.TabIndex = 15;
             this.labelChuY.Text = "*Click vào dòng có phòng cần đặt để đặt phòng";
             // 
+            // labelTenKH
+            // 
+            this.labelTenKH.AutoSize = true;
+            this.labelTenKH.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelTenKH.Font = new System.Drawing.Font("Segoe UI", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenKH.ForeColor = System.Drawing.Color.Indigo;
+            this.labelTenKH.Location = new System.Drawing.Point(146, 3);
+            this.labelTenKH.Name = "labelTenKH";
+            this.labelTenKH.Size = new System.Drawing.Size(175, 30);
+            this.labelTenKH.TabIndex = 16;
+            this.labelTenKH.Text = "Tên khách hàng";
+            // 
             // fBatDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,11 +356,14 @@ namespace QuanLyKhachSan
             this.panel301.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).EndInit();
             this.panelDV.ResumeLayout(false);
+            this.panelDV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
+
 
         #endregion
 
@@ -343,6 +387,9 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private Label labelChuY;
+        private Button btnDVDxuat;
+        private Label labelTenKH;
+
     }
 }
 

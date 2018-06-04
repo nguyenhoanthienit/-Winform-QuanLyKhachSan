@@ -18,7 +18,6 @@ namespace QuanLyKhachSan
             InitializeComponent();
         }
 
-        public string currentUser = fDangNhap.UserInformation.CurrentLoggedInUser;
         private void btnDki_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -33,6 +32,13 @@ namespace QuanLyKhachSan
             f.ShowDialog();
         }
 
+        private void btnDxuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fDangNhap f = new fDangNhap();
+            f.ShowDialog();
+        }
+
         private void fBatDau_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thật sự thoát chương trình", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
@@ -41,25 +47,26 @@ namespace QuanLyKhachSan
             }
         }
 
+        public string currentUser = fDangNhap.UserInformation.CurrentLoggedInUser;
         private void fBatDau_Load(object sender, EventArgs e)
         {
             if (currentUser != null)
             {
-                Label l = new Label();
-                l.Text = "Xin chào " + currentUser + " !";
-                l.AutoSize = true;
-                l.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-                l.Font = new System.Drawing.Font("Segoe UI", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                l.ForeColor = System.Drawing.Color.DeepSkyBlue;
-                l.Location = new System.Drawing.Point(48, 0);
-                l.Name = "labeldemo";
-                l.Size = new System.Drawing.Size(148, 30);
-                l.TabIndex = 15;
-                panelDV.Controls.Remove(btnDVDnhap);
-                panelDV.Controls.Remove(btnDVDki);
-                panelDV.Controls.Add(l);
+                btnDVDnhap.Hide();
+                btnDVDki.Hide();
+                btnDVDxuat.Show();
+                labelTenKH.Text = currentUser;
+                labelTenKH.Show();
+            }
+            else
+            {
+                btnDVDnhap.Show();
+                btnDVDki.Show();
+                btnDVDxuat.Hide();
+                labelTenKH.Text = null;
             }
         }
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -71,6 +78,20 @@ namespace QuanLyKhachSan
         private void fBatDau_FormClosed(object sender, FormClosedEventArgs e)
         {
             Process.GetCurrentProcess().Kill();
+        }
+
+        private void btnDVTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public Control labelXinChao { get; set; }
+        private void btnDVDxuat_Click(object sender, EventArgs e)
+        {
+            btnDVDnhap.Show();
+            btnDVDki.Show();
+            btnDVDxuat.Hide();
+            labelTenKH.Text = null;
         }
     }
 }

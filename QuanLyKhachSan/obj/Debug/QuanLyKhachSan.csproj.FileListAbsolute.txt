@@ -11,3 +11,16 @@ D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\QuanLyKhac
 D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fDangNhap.resources
 D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fDatPhong.resources
 D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fNhanVien.resources
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojResolveAssemblyReference.cache
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fDangKi.resources
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fDangNhap.resources
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fDatPhong.resources
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fNhanVien.resources
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBatDau.resources
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+D:\EDUCATION\Nam III\HKII\Co so du lieu nang cao\Do an\QuanLyKhachSan\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.Cache
