@@ -59,6 +59,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbDKHoTen = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
             this.panel1.SuspendLayout();
@@ -117,6 +118,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.btnDKDki);
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel8);
@@ -139,7 +141,7 @@
             this.btnDKDki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDKDki.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnDKDki.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDKDki.Location = new System.Drawing.Point(204, 234);
+            this.btnDKDki.Location = new System.Drawing.Point(204, 254);
             this.btnDKDki.Name = "btnDKDki";
             this.btnDKDki.Size = new System.Drawing.Size(220, 47);
             this.btnDKDki.TabIndex = 9;
@@ -357,6 +359,17 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Họ tên";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DarkRed;
+            this.label10.Location = new System.Drawing.Point(201, 219);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(223, 20);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "*Bạn hãy điền đầy đủ thông tin";
+            // 
             // fDangKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,6 +389,7 @@
             this.panel301.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -429,5 +443,6 @@
         private System.Windows.Forms.TextBox txbDKDC;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnDKDki;
+        private System.Windows.Forms.Label label10;
     }
 }

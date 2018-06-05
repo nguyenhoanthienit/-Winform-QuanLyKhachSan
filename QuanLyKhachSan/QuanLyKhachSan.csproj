@@ -44,16 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="BUS\KhachHangBUS.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
-    <Compile Include="DAO\TimKiemKhachSanDAO.cs" />
-    <Compile Include="DoAnCSDLNC_IndexDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoAnCSDLNC_IndexDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DTO\KhachHang.cs" />
-    <Compile Include="DTO\TimKiemKhachSan.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="fDangKi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,17 +103,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DoAnCSDLNC_IndexDataSet.xsc">
-      <DependentUpon>DoAnCSDLNC_IndexDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DoAnCSDLNC_IndexDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DoAnCSDLNC_IndexDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DoAnCSDLNC_IndexDataSet.xss">
-      <DependentUpon>DoAnCSDLNC_IndexDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

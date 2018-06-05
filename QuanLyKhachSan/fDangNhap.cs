@@ -1,4 +1,4 @@
-﻿using QuanLyKhachSan.DAO;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,10 +22,8 @@ namespace QuanLyKhachSan
         #region methods
 
 
-        bool DangNhapKH(string tenDangNhap, string matKhau)
-        {
-            return KhachHangDAO.Instance.DangNhap(tenDangNhap, matKhau);
-        }
+       
+        
         #endregion
 
         #region events

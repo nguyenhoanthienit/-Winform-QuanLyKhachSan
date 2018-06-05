@@ -1,4 +1,7 @@
-﻿using System;
+﻿using QuanLyKhachSan.DTO;
+using QuanLyKhachSan.BUS;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,14 +21,38 @@ namespace QuanLyKhachSan
         }
 
         #region methods
-
+        public string RandomMaKH()
+        {
+            Random r = new Random();
+            string maKH = "KH" + r.Next(10, 99999999).ToString();
+            return maKH;
+        }
         #endregion
 
         #region events
         private void btnDki_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Đăng kí thành công", "Thông báo");
-            this.Close();
+            KhachHangDTO k = new KhachHangDTO();
+            k.MaKH = RandomMaKH();
+            k.HoTen = txbDKHoTen.Text;
+            k.TenDangNhap = txbDKDnhap.Text;
+            k.MatKhau = txbDKMkhau.Text;
+            k.SoCMND = txbDKCMND.Text;
+            k.SoDienThoai = txbDKDT.Text;
+            k.DiaChi = txbDKDC.Text;
+            k.Email = txbDKEmail.Text;
+            k.MoTa = "Đẹp trai";
+
+            int n = KhachHangBUS.ThemKhachHang(k);
+            if (n > 0)
+            {
+                MessageBox.Show("Bạn đã đăng kí thành công !");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Đăng kí thất bại !");
+            }
         }
 
         private void fDangKi_FormClosed(object sender, FormClosedEventArgs e)
