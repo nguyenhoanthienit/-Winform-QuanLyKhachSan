@@ -38,3 +38,17 @@ C:\Users\vosuc\OneDrive\Desktop\githup source\-Winform-QuanLyKhachSan\QuanLyKhac
 C:\Users\vosuc\OneDrive\Desktop\githup source\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\vosuc\OneDrive\Desktop\githup source\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\vosuc\OneDrive\Desktop\githup source\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojResolveAssemblyReference.cache
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fDangKi.resources
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fDangNhap.resources
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fDatPhong.resources
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fNhanVien.resources
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBatDau.resources
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\vosuc\OneDrive\Desktop\-Winform-QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb

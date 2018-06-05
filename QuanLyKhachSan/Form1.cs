@@ -27,6 +27,12 @@ namespace QuanLyKhachSan
             List<TimKiemKhachSan> listTimKiem = TimKiemKhachSanDAO.Instance.GetTimKiemKhachSanByAll();
             dtgvTimKiemKhachSan.DataSource = listTimKiem;
         }
+
+        void Load_ComBoBoxDichVu_SoSao(int soSao)
+        {
+            List<TimKiemKhachSan> list_sosao = TimKiemKhachSanDAO.Instance.GetTimKiemKhachSanBy_soSao(soSao);
+            dtgvTimKiemKhachSan.DataSource = list_sosao;
+        }
         #endregion
 
         #region events
@@ -62,6 +68,8 @@ namespace QuanLyKhachSan
         public string currentUser = fDangNhap.UserInformation.CurrentLoggedInUser;
         private void fBatDau_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'doAnCSDLNC_IndexDataSet.KhachSan' table. You can move, or remove it, as needed.
+            this.khachSanTableAdapter.Fill(this.doAnCSDLNC_IndexDataSet.KhachSan);
             if (currentUser != null)
             {
                 btnDVDnhap.Hide();
@@ -112,5 +120,26 @@ namespace QuanLyKhachSan
 
         }
         #endregion
+
+        private void cbxDVSao_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+               
+        }
+
+        private void cbxDVTp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dtgvTimKiemKhachSan.Show();
+            ComboBox cb = sender as ComboBox;
+            int sosao = 0;
+            if(cb.SelectedItem == null)
+            {
+                return;
+            }
+            TimKiemKhachSan khachSan = cb.SelectedItem as TimKiemKhachSan;
+            sosao = khachSan.SoSao;
+            Load_ComBoBoxDichVu_SoSao(sosao);
+            
+        }
     }
 }

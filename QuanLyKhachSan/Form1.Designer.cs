@@ -30,6 +30,7 @@ namespace QuanLyKhachSan
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBatDau));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,11 +51,16 @@ namespace QuanLyKhachSan
             this.btnDVDxuat = new System.Windows.Forms.Button();
             this.dtgvTimKiemKhachSan = new System.Windows.Forms.DataGridView();
             this.labelChuY = new System.Windows.Forms.Label();
+            this.doAnCSDLNC_IndexDataSet = new QuanLyKhachSan.DoAnCSDLNC_IndexDataSet();
+            this.khachSanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.khachSanTableAdapter = new QuanLyKhachSan.DoAnCSDLNC_IndexDataSetTableAdapters.KhachSanTableAdapter();
             this.panel1.SuspendLayout();
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
             this.panelDV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTimKiemKhachSan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCSDLNC_IndexDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khachSanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,15 +119,15 @@ namespace QuanLyKhachSan
             this.cbxDVGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxDVGia.FormattingEnabled = true;
             this.cbxDVGia.Items.AddRange(new object[] {
-            "1000000",
-            "1500000",
-            "2000000",
-            "5000000"});
+            "100000",
+            "200000",
+            "300000",
+            "500000"});
             this.cbxDVGia.Location = new System.Drawing.Point(14, 49);
             this.cbxDVGia.Name = "cbxDVGia";
             this.cbxDVGia.Size = new System.Drawing.Size(107, 21);
             this.cbxDVGia.TabIndex = 1;
-            this.cbxDVGia.Text = "1000000";
+            this.cbxDVGia.Text = "--Chọn giá";
             this.cbxDVGia.SelectedIndexChanged += new System.EventHandler(this.cbxDVGia_SelectedIndexChanged);
             // 
             // cbxDVSao
@@ -139,7 +145,8 @@ namespace QuanLyKhachSan
             this.cbxDVSao.Name = "cbxDVSao";
             this.cbxDVSao.Size = new System.Drawing.Size(107, 21);
             this.cbxDVSao.TabIndex = 2;
-            this.cbxDVSao.Text = "3";
+            this.cbxDVSao.Text = "--Chọn sao";
+            this.cbxDVSao.SelectedValueChanged += new System.EventHandler(this.cbxDVSao_SelectedValueChanged);
             // 
             // label4
             // 
@@ -158,14 +165,76 @@ namespace QuanLyKhachSan
             this.cbxDVTp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxDVTp.FormattingEnabled = true;
             this.cbxDVTp.Items.AddRange(new object[] {
-            "TPHCM",
-            "Đà Nẵng",
-            "Hà Nội"});
+            "An Giang",
+            "Bà Rịa-Vũng Tàu",
+            "Bạc Liêu",
+            "Bắc Kạn",
+            "Bắc Giang",
+            "Bắc Ninh",
+            "Bến Tre",
+            "Bình Dương",
+            "Bình Định",
+            "Bình Phước",
+            "Bình Thuận",
+            "Cà Mau",
+            "Cao Bằng",
+            "Cần Thơ (TP)",
+            "Đà Nẵng (TP)",
+            "Đắk Lắk",
+            "Đắk Nông",
+            "Điện Biên",
+            "Đồng Nai",
+            "Đồng Tháp",
+            "Gia Lai",
+            "Hà Giang",
+            "Hà Nam",
+            "Hà Nội (TP)",
+            "Hà Tây",
+            "Hà Tĩnh",
+            "Hải Dương",
+            "Hải Phòng (TP)",
+            "Hòa Bình",
+            "Hồ Chí Minh (TP)",
+            "Hậu Giang",
+            "Hưng Yên",
+            "Khánh Hòa",
+            "Kiên Giang",
+            "Kon Tum",
+            "Lai Châu",
+            "Lào Cai",
+            "Lạng Sơn",
+            "Lâm Đồng",
+            "Long An",
+            "Nam Định",
+            "Nghệ An",
+            "Ninh Bình",
+            "Ninh Thuận",
+            "Phú Thọ",
+            "Phú Yên",
+            "Quảng Bình",
+            "Quảng Nam",
+            "Quảng Ngãi",
+            "Quảng Ninh",
+            "Quảng Trị",
+            "Sóc Trăng",
+            "Sơn La",
+            "Tây Ninh",
+            "Thái Bình",
+            "Thái Nguyên",
+            "Thanh Hóa",
+            "Thừa Thiên - Huế",
+            "Tiền Giang",
+            "Trà Vinh",
+            "Tuyên Quang",
+            "Vĩnh Long",
+            "Vĩnh Phúc",
+            "Yên Bái"});
             this.cbxDVTp.Location = new System.Drawing.Point(361, 49);
             this.cbxDVTp.Name = "cbxDVTp";
             this.cbxDVTp.Size = new System.Drawing.Size(107, 21);
             this.cbxDVTp.TabIndex = 3;
-            this.cbxDVTp.Text = "TPHCM";
+            this.cbxDVTp.Text = "--Chọn thành phố";
+            this.cbxDVTp.SelectedIndexChanged += new System.EventHandler(this.cbxDVTp_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -309,6 +378,20 @@ namespace QuanLyKhachSan
             this.labelChuY.TabIndex = 15;
             this.labelChuY.Text = "*Click vào dòng có phòng cần đặt để đặt phòng";
             // 
+            // doAnCSDLNC_IndexDataSet
+            // 
+            this.doAnCSDLNC_IndexDataSet.DataSetName = "DoAnCSDLNC_IndexDataSet";
+            this.doAnCSDLNC_IndexDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // khachSanBindingSource
+            // 
+            this.khachSanBindingSource.DataMember = "KhachSan";
+            this.khachSanBindingSource.DataSource = this.doAnCSDLNC_IndexDataSet;
+            // 
+            // khachSanTableAdapter
+            // 
+            this.khachSanTableAdapter.ClearBeforeFill = true;
+            // 
             // fBatDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +420,8 @@ namespace QuanLyKhachSan
             this.panelDV.ResumeLayout(false);
             this.panelDV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTimKiemKhachSan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCSDLNC_IndexDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khachSanBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,7 +450,9 @@ namespace QuanLyKhachSan
         private Label labelChuY;
         private Button btnDVDxuat;
         private Label labelTenKH;
-
+        private DoAnCSDLNC_IndexDataSet doAnCSDLNC_IndexDataSet;
+        private BindingSource khachSanBindingSource;
+        private DoAnCSDLNC_IndexDataSetTableAdapters.KhachSanTableAdapter khachSanTableAdapter;
     }
 }
 
