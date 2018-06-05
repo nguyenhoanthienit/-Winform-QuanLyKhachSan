@@ -55,11 +55,6 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void fDangKi_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            fBatDau f = new fBatDau();
-            f.Show();
-        }
         #endregion
 
     }

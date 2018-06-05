@@ -384,7 +384,6 @@
             this.Name = "fDangKi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng kí";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fDangKi_FormClosed);
             this.panel301.ResumeLayout(false);
             this.panel301.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).EndInit();

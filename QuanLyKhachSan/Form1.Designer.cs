@@ -93,9 +93,9 @@ namespace QuanLyKhachSan
             this.btnDVTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDVTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btnDVTimKiem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDVTimKiem.Location = new System.Drawing.Point(562, 25);
+            this.btnDVTimKiem.Location = new System.Drawing.Point(583, 13);
             this.btnDVTimKiem.Name = "btnDVTimKiem";
-            this.btnDVTimKiem.Size = new System.Drawing.Size(117, 45);
+            this.btnDVTimKiem.Size = new System.Drawing.Size(96, 57);
             this.btnDVTimKiem.TabIndex = 5;
             this.btnDVTimKiem.Text = "TÌM THEO TIÊU CHÍ KHÁCH SẠN";
             this.toolTip1.SetToolTip(this.btnDVTimKiem, "*Chỉ hỗ trợ tìm kiếm theo\r\nGiá - Thành phố\r\nHạng sao - Thành phố\r\nThành phố");
@@ -374,9 +374,8 @@ namespace QuanLyKhachSan
             this.labelTenKH.ForeColor = System.Drawing.Color.Indigo;
             this.labelTenKH.Location = new System.Drawing.Point(133, 3);
             this.labelTenKH.Name = "labelTenKH";
-            this.labelTenKH.Size = new System.Drawing.Size(175, 30);
+            this.labelTenKH.Size = new System.Drawing.Size(0, 30);
             this.labelTenKH.TabIndex = 16;
-            this.labelTenKH.Text = "Tên khách hàng";
             // 
             // btnDVDxuat
             // 
@@ -425,7 +424,7 @@ namespace QuanLyKhachSan
             this.btnDVLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDVLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btnDVLoad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDVLoad.Location = new System.Drawing.Point(541, 242);
+            this.btnDVLoad.Location = new System.Drawing.Point(541, 264);
             this.btnDVLoad.Name = "btnDVLoad";
             this.btnDVLoad.Size = new System.Drawing.Size(150, 25);
             this.btnDVLoad.TabIndex = 9;

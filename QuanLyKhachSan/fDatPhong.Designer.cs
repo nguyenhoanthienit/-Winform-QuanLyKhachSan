@@ -359,7 +359,6 @@
             this.Name = "fDatPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tình trạng";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fDatPhong_FormClosed);
             this.panel301.ResumeLayout(false);
             this.panel301.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).EndInit();

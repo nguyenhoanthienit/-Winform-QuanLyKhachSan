@@ -18,6 +18,8 @@ namespace QuanLyKhachSan
         SqlConnection _connection = null;
         SqlCommand _command = null;
 
+        public string currentUser = fDangNhap.UserInformation.CurrentLoggedInUser;
+
         public fBatDau()
         {
             InitializeComponent();
@@ -26,19 +28,11 @@ namespace QuanLyKhachSan
         }
         private void btnDki_Click(object sender, EventArgs e)
         {
-            this.Hide();
             fDangKi f = new fDangKi();
             f.ShowDialog();
         }
 
         private void btnDnhap_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            fDangNhap f = new fDangNhap();
-            f.ShowDialog();
-        }
-
-        private void btnDxuat_Click(object sender, EventArgs e)
         {
             this.Hide();
             fDangNhap f = new fDangNhap();
@@ -53,10 +47,8 @@ namespace QuanLyKhachSan
             }
         }
 
-        public string currentUser = fDangNhap.UserInformation.CurrentLoggedInUser;
         private void fBatDau_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'doAnCSDLNC_IndexDataSet.KhachSan' table. You can move, or remove it, as needed.
             if (currentUser != null)
             {
                 btnDVDnhap.Hide();
@@ -77,9 +69,8 @@ namespace QuanLyKhachSan
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.Hide();
             fDatPhong f = new fDatPhong();
-            f.Show();
+            f.ShowDialog();
         }
 
         private void fBatDau_FormClosed(object sender, FormClosedEventArgs e)
@@ -89,20 +80,13 @@ namespace QuanLyKhachSan
 
         
         public Control labelXinChao { get; set; }
+
         private void btnDVDxuat_Click(object sender, EventArgs e)
         {
             btnDVDnhap.Show();
             btnDVDki.Show();
             btnDVDxuat.Hide();
             labelTenKH.Text = null;
-        }
-
-        public string GetComboboxData(string data)
-        {
-            if (data[0] == '-')
-                return null;
-            else
-                return data;
         }
 
         private void btnDVTimKiem_Click(object sender, EventArgs e)

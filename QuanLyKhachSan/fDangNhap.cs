@@ -38,6 +38,9 @@ namespace QuanLyKhachSan
         {
             if (txbDNTenDN.Text == "nv" && txbDNMk.Text == "nv")
             {
+                string username = "Nhân Viên";
+                UserInformation.CurrentLoggedInUser = username;
+
                 this.Hide();
                 fNhanVien f = new fNhanVien();
                 f.Show();
@@ -64,7 +67,7 @@ namespace QuanLyKhachSan
                     string maKH = (string)_command.Parameters["@maKH"].Value;
                     string hoTen = (string)_command.Parameters["@hoTen"].Value;
 
-                    MessageBox.Show("Xin chào " + maKH + " - " + hoTen);
+                    MessageBox.Show("Xin chào \n" + maKH + "\n" + hoTen);
                     _connection.Close();
 
                     string username = hoTen;
