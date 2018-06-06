@@ -8,12 +8,12 @@ namespace QuanLyKhachSan.DTO
 {
     class DatPhongDTO
     {
-        private string _maDB;
+        private string _maDP;
 
-        public string MaDB
+        public string MaDP
         {
-            get { return _maDB; }
-            set { _maDB = value; }
+            get { return _maDP; }
+            set { _maDP = value; }
         }
 
         private string _maLoaiPhong;
@@ -59,19 +59,45 @@ namespace QuanLyKhachSan.DTO
             get { return _donGia; }
             set { _donGia = value; }
         }
-        private string moTa;
+        private string _moTa;
 
         public string MoTa
         {
-            get { return moTa; }
-            set { moTa = value; }
+            get { return _moTa; }
+            set { _moTa = value; }
         }
-        private string tinhTrang;
+        private string _tinhTrang;
 
         public string TinhTrang
         {
-            get { return tinhTrang; }
-            set { tinhTrang = value; }
+            get { return _tinhTrang; }
+            set { _tinhTrang = value; }
+        }
+
+        public DatPhongDTO(string maDP, string maLP, string maKH, DateTime ngbd, DateTime ngtp, DateTime ngdat, int dgia, string mt, string tt)
+        {
+            _maDP = maDP;
+            _maLoaiPhong = maLP;
+            _maKH = maKH;
+            _ngayBD = ngbd;
+            _ngayTP = ngtp;
+            _ngayDat = ngdat;
+            _donGia = dgia;
+            _moTa = mt;
+            _tinhTrang = tt;
+        }
+
+        public DatPhongDTO()
+        {
+            _maDP = "";
+            _maLoaiPhong = "";
+            _maKH = "";
+            _ngayBD = DateTime.Now;
+            _ngayTP = DateTime.Now;
+            _ngayDat = DateTime.Now;
+            _donGia = 0;
+            _moTa = "";
+            _tinhTrang = "";
         }
     }
 }

@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\DatPhongBUS.cs" />
     <Compile Include="BUS\KhachHangBUS.cs" />
     <Compile Include="DAO\Connection.cs" />
     <Compile Include="DAO\DatPhongDAO.cs" />

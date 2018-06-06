@@ -33,7 +33,8 @@
             this.label201 = new System.Windows.Forms.Label();
             this.pictureBox101 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.cbxTTPhongTrong = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -42,16 +43,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnTTDatPhong = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxDKTt = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtpkDKngDat = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpkDKngTP = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpkDKngBD = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txbTTMaKH = new System.Windows.Forms.TextBox();
@@ -61,7 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -106,31 +107,43 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(198, 30);
+            this.label2.Location = new System.Drawing.Point(206, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(483, 65);
+            this.label2.Size = new System.Drawing.Size(495, 54);
             this.label2.TabIndex = 16;
-            this.label2.Text = "THÔNG TIN PHÒNG";
+            this.label2.Text = "THÔNG TIN ĐẶT PHÒNG";
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.labelChuY);
-            this.panel1.Controls.Add(this.txbTTDonGia);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnTTDatPhong);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(72, 143);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(609, 313);
-            this.panel1.TabIndex = 18;
+            this.panel.Controls.Add(this.label10);
+            this.panel.Controls.Add(this.panel7);
+            this.panel.Controls.Add(this.labelChuY);
+            this.panel.Controls.Add(this.txbTTDonGia);
+            this.panel.Controls.Add(this.label7);
+            this.panel.Controls.Add(this.btnTTDatPhong);
+            this.panel.Controls.Add(this.panel9);
+            this.panel.Controls.Add(this.panel6);
+            this.panel.Controls.Add(this.panel5);
+            this.panel.Controls.Add(this.panel4);
+            this.panel.Controls.Add(this.panel3);
+            this.panel.Controls.Add(this.panel2);
+            this.panel.Location = new System.Drawing.Point(72, 143);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(609, 313);
+            this.panel.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DarkRed;
+            this.label10.Location = new System.Drawing.Point(200, 225);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(226, 20);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "*Vui lòng điền đầy đủ thông tin";
             // 
             // panel7
             // 
@@ -164,7 +177,7 @@
             this.labelChuY.AutoSize = true;
             this.labelChuY.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChuY.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelChuY.Location = new System.Drawing.Point(166, 247);
+            this.labelChuY.Location = new System.Drawing.Point(166, 235);
             this.labelChuY.Name = "labelChuY";
             this.labelChuY.Size = new System.Drawing.Size(305, 20);
             this.labelChuY.TabIndex = 15;
@@ -196,7 +209,7 @@
             this.btnTTDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTTDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnTTDatPhong.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnTTDatPhong.Location = new System.Drawing.Point(204, 234);
+            this.btnTTDatPhong.Location = new System.Drawing.Point(204, 248);
             this.btnTTDatPhong.Name = "btnTTDatPhong";
             this.btnTTDatPhong.Size = new System.Drawing.Size(220, 47);
             this.btnTTDatPhong.TabIndex = 9;
@@ -206,23 +219,25 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.comboBox1);
+            this.panel9.Controls.Add(this.cbxDKTt);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Location = new System.Drawing.Point(328, 165);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(248, 48);
             this.panel9.TabIndex = 8;
             // 
-            // comboBox1
+            // cbxDKTt
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbxDKTt.DisplayMember = "Đã xác nhận";
+            this.cbxDKTt.FormattingEnabled = true;
+            this.cbxDKTt.Items.AddRange(new object[] {
             "Đã xác nhận",
             "Chưa xác nhận"});
-            this.comboBox1.Location = new System.Drawing.Point(105, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cbxDKTt.Location = new System.Drawing.Point(105, 13);
+            this.cbxDKTt.Name = "cbxDKTt";
+            this.cbxDKTt.Size = new System.Drawing.Size(140, 21);
+            this.cbxDKTt.TabIndex = 3;
+            this.cbxDKTt.ValueMember = "Đã xác nhận";
             // 
             // label9
             // 
@@ -236,20 +251,20 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.dateTimePicker3);
+            this.panel6.Controls.Add(this.dtpkDKngDat);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(343, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(233, 48);
             this.panel6.TabIndex = 5;
             // 
-            // dateTimePicker3
+            // dtpkDKngDat
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(90, 18);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(140, 20);
-            this.dateTimePicker3.TabIndex = 20;
+            this.dtpkDKngDat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkDKngDat.Location = new System.Drawing.Point(90, 18);
+            this.dtpkDKngDat.Name = "dtpkDKngDat";
+            this.dtpkDKngDat.Size = new System.Drawing.Size(140, 20);
+            this.dtpkDKngDat.TabIndex = 20;
             // 
             // label6
             // 
@@ -263,20 +278,20 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.dateTimePicker2);
+            this.panel5.Controls.Add(this.dtpkDKngTP);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(3, 165);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(285, 48);
             this.panel5.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // dtpkDKngTP
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(140, 13);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(140, 20);
-            this.dateTimePicker2.TabIndex = 20;
+            this.dtpkDKngTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkDKngTP.Location = new System.Drawing.Point(140, 13);
+            this.dtpkDKngTP.Name = "dtpkDKngTP";
+            this.dtpkDKngTP.Size = new System.Drawing.Size(140, 20);
+            this.dtpkDKngTP.TabIndex = 20;
             // 
             // label5
             // 
@@ -290,20 +305,20 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dateTimePicker1);
+            this.panel4.Controls.Add(this.dtpkDKngBD);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(12, 111);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(276, 48);
             this.panel4.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dtpkDKngBD
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(131, 14);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(140, 20);
-            this.dateTimePicker1.TabIndex = 19;
+            this.dtpkDKngBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkDKngBD.Location = new System.Drawing.Point(131, 14);
+            this.dtpkDKngBD.Name = "dtpkDKngBD";
+            this.dtpkDKngBD.Size = new System.Drawing.Size(140, 20);
+            this.dtpkDKngBD.TabIndex = 19;
             // 
             // label4
             // 
@@ -375,7 +390,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(737, 468);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.panel301);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -386,8 +401,8 @@
             this.panel301.ResumeLayout(false);
             this.panel301.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -413,7 +428,7 @@
         private System.Windows.Forms.Label label201;
         private System.Windows.Forms.PictureBox pictureBox101;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Button btnTTDatPhong;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label9;
@@ -431,13 +446,14 @@
         private System.Windows.Forms.TextBox txbTTMaLP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbTTDonGia;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtpkDKngTP;
+        private System.Windows.Forms.DateTimePicker dtpkDKngBD;
+        private System.Windows.Forms.DateTimePicker dtpkDKngDat;
         private System.Windows.Forms.Label labelChuY;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxDKTt;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ComboBox cbxTTPhongTrong;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
     }
 }

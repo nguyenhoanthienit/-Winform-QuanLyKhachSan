@@ -70,14 +70,21 @@ namespace QuanLyKhachSan
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string loaiPhong;
-            string donGia;
-            loaiPhong = dtgvTimKiemKhachSan.Rows[e.RowIndex].Cells["Mã Loại Phòng"].Value.ToString();
-            donGia = dtgvTimKiemKhachSan.Rows[e.RowIndex].Cells["Đơn giá"].Value.ToString();
-            LoaiPhong.getLoaiPhong = loaiPhong;
-            LoaiPhong.getDonGia = donGia;
-            fDatPhong f = new fDatPhong();
-            f.ShowDialog();
+            string loaiPhong = "";
+            string donGia = "";
+            if (e.RowIndex == -1 || e.ColumnIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                loaiPhong = dtgvTimKiemKhachSan.Rows[e.RowIndex].Cells["Mã Loại Phòng"].Value.ToString();
+                donGia = dtgvTimKiemKhachSan.Rows[e.RowIndex].Cells["Đơn giá"].Value.ToString();
+                LoaiPhong.getLoaiPhong = loaiPhong;
+                LoaiPhong.getDonGia = donGia;
+                fDatPhong f = new fDatPhong();
+                f.ShowDialog();
+            }
         }
 
         private void fBatDau_FormClosed(object sender, FormClosedEventArgs e)
@@ -240,6 +247,7 @@ namespace QuanLyKhachSan
             bSource.DataSource = table;
 
             dtgvTimKiemKhachSan.DataSource = bSource;
+
             adapter.Update(table);
         }
 

@@ -13,7 +13,7 @@ namespace QuanLyKhachSan.DAO
     class DatPhongDAO
     {
         static public SqlCommand _command = null;
-        public static int DatPhong(DatPhongDTO d)
+        public static int DatPhong(DatPhongDTO d, string maPhong)
         {
             try
             {
@@ -34,8 +34,9 @@ namespace QuanLyKhachSan.DAO
                 _command.Parameters.Add("@dongia", SqlDbType.Int);
                 _command.Parameters.Add("@mota", SqlDbType.NVarChar, 50);
                 _command.Parameters.Add("@ttrang", SqlDbType.NVarChar, 15);
+                _command.Parameters.Add("@maPhong", SqlDbType.Char,10);
 
-                _command.Parameters["@maDP"].Value = d.MaDB;
+                _command.Parameters["@maDP"].Value = d.MaDP;
                 _command.Parameters["@maLoaiPhong"].Value = d.MaLoaiPhong;
                 _command.Parameters["@maKH"].Value = d.MaKH;
                 _command.Parameters["@ngbd"].Value = d.NgayBD;
@@ -44,6 +45,7 @@ namespace QuanLyKhachSan.DAO
                 _command.Parameters["@dongia"].Value = d.DonGia;
                 _command.Parameters["@mota"].Value = d.MoTa;
                 _command.Parameters["@ttrang"].Value = d.TinhTrang;
+                _command.Parameters["@maPhong"].Value = maPhong;
 
                 int n = _command.ExecuteNonQuery();
                 _connection.Close();
