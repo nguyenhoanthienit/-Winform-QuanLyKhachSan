@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using QuanLyKhachSan.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +19,7 @@ namespace QuanLyKhachSan
         String _connectionString = "";
         SqlConnection _connection = null;
         SqlCommand _command = null;
-
-        public string currentUser = fDangNhap.UserInformation.CurrentLoggedInUser;
+        KhachHangDTO currentUser = fDangNhap.UserInformation.CurrentLoggedInUser;
 
         public fBatDau()
         {
@@ -54,7 +55,7 @@ namespace QuanLyKhachSan
                 btnDVDnhap.Hide();
                 btnDVDki.Hide();
                 btnDVDxuat.Show();
-                labelTenKH.Text = currentUser;
+                labelTenKH.Text = currentUser.HoTen;
                 labelTenKH.Show();
             }
             else
@@ -69,6 +70,12 @@ namespace QuanLyKhachSan
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string loaiPhong;
+            string donGia;
+            loaiPhong = dtgvTimKiemKhachSan.Rows[e.RowIndex].Cells["Mã Loại Phòng"].Value.ToString();
+            donGia = dtgvTimKiemKhachSan.Rows[e.RowIndex].Cells["Đơn giá"].Value.ToString();
+            LoaiPhong.getLoaiPhong = loaiPhong;
+            LoaiPhong.getDonGia = donGia;
             fDatPhong f = new fDatPhong();
             f.ShowDialog();
         }
@@ -239,6 +246,20 @@ namespace QuanLyKhachSan
         private void btnDVLoad_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        internal class LoaiPhong
+        {
+            public static string getLoaiPhong
+            {
+                get;
+                set;
+            }
+            public static string getDonGia
+            {
+                get;
+                set;
+            }
         }
     }
 }

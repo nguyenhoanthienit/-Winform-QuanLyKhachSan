@@ -45,7 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\KhachHangBUS.cs" />
+    <Compile Include="DAO\Connection.cs" />
+    <Compile Include="DAO\DatPhongDAO.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DTO\DatPhongDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="fDangKi.cs">
       <SubType>Form</SubType>

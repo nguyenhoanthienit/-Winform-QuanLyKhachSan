@@ -34,23 +34,24 @@
             this.pictureBox101 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.cbxTTPhongTrong = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelChuY = new System.Windows.Forms.Label();
             this.txbTTDonGia = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnTTDatPhong = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txbTTTinhTrang = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.txbTTMoTa = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txbTTNgayDat = new System.Windows.Forms.TextBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txbTTNgayTraPhong = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txbTTNgayBD = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txbTTMaKH = new System.Windows.Forms.TextBox();
@@ -61,8 +62,8 @@
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -115,11 +116,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.labelChuY);
             this.panel1.Controls.Add(this.txbTTDonGia);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btnTTDatPhong);
             this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
@@ -130,8 +132,47 @@
             this.panel1.Size = new System.Drawing.Size(609, 313);
             this.panel1.TabIndex = 18;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.cbxTTPhongTrong);
+            this.panel7.Controls.Add(this.label8);
+            this.panel7.Location = new System.Drawing.Point(307, 110);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(269, 48);
+            this.panel7.TabIndex = 9;
+            // 
+            // cbxTTPhongTrong
+            // 
+            this.cbxTTPhongTrong.FormattingEnabled = true;
+            this.cbxTTPhongTrong.Location = new System.Drawing.Point(126, 13);
+            this.cbxTTPhongTrong.Name = "cbxTTPhongTrong";
+            this.cbxTTPhongTrong.Size = new System.Drawing.Size(140, 21);
+            this.cbxTTPhongTrong.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(15, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 21);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Phòng trống";
+            // 
+            // labelChuY
+            // 
+            this.labelChuY.AutoSize = true;
+            this.labelChuY.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChuY.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelChuY.Location = new System.Drawing.Point(166, 247);
+            this.labelChuY.Name = "labelChuY";
+            this.labelChuY.Size = new System.Drawing.Size(305, 20);
+            this.labelChuY.TabIndex = 15;
+            this.labelChuY.Text = "*Bạn phải đăng nhập mới có thể đặt phòng";
+            // 
             // txbTTDonGia
             // 
+            this.txbTTDonGia.Enabled = false;
             this.txbTTDonGia.Location = new System.Drawing.Point(433, 75);
             this.txbTTDonGia.Name = "txbTTDonGia";
             this.txbTTDonGia.Size = new System.Drawing.Size(140, 20);
@@ -165,19 +206,23 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.txbTTTinhTrang);
+            this.panel9.Controls.Add(this.comboBox1);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Location = new System.Drawing.Point(328, 165);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(248, 48);
             this.panel9.TabIndex = 8;
             // 
-            // txbTTTinhTrang
+            // comboBox1
             // 
-            this.txbTTTinhTrang.Location = new System.Drawing.Point(105, 15);
-            this.txbTTTinhTrang.Name = "txbTTTinhTrang";
-            this.txbTTTinhTrang.Size = new System.Drawing.Size(140, 20);
-            this.txbTTTinhTrang.TabIndex = 1;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Đã xác nhận",
+            "Chưa xác nhận"});
+            this.comboBox1.Location = new System.Drawing.Point(105, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(140, 21);
+            this.comboBox1.TabIndex = 3;
             // 
             // label9
             // 
@@ -189,47 +234,22 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "Tình trạng";
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.txbTTMoTa);
-            this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(343, 111);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(233, 48);
-            this.panel8.TabIndex = 7;
-            // 
-            // txbTTMoTa
-            // 
-            this.txbTTMoTa.Location = new System.Drawing.Point(90, 15);
-            this.txbTTMoTa.Name = "txbTTMoTa";
-            this.txbTTMoTa.Size = new System.Drawing.Size(140, 20);
-            this.txbTTMoTa.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(26, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 21);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Mô tả";
-            // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.txbTTNgayDat);
+            this.panel6.Controls.Add(this.dateTimePicker3);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(343, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(233, 48);
             this.panel6.TabIndex = 5;
             // 
-            // txbTTNgayDat
+            // dateTimePicker3
             // 
-            this.txbTTNgayDat.Location = new System.Drawing.Point(90, 18);
-            this.txbTTNgayDat.Name = "txbTTNgayDat";
-            this.txbTTNgayDat.Size = new System.Drawing.Size(140, 20);
-            this.txbTTNgayDat.TabIndex = 1;
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(90, 18);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePicker3.TabIndex = 20;
             // 
             // label6
             // 
@@ -243,19 +263,20 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.txbTTNgayTraPhong);
+            this.panel5.Controls.Add(this.dateTimePicker2);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(3, 165);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(285, 48);
             this.panel5.TabIndex = 4;
             // 
-            // txbTTNgayTraPhong
+            // dateTimePicker2
             // 
-            this.txbTTNgayTraPhong.Location = new System.Drawing.Point(140, 15);
-            this.txbTTNgayTraPhong.Name = "txbTTNgayTraPhong";
-            this.txbTTNgayTraPhong.Size = new System.Drawing.Size(140, 20);
-            this.txbTTNgayTraPhong.TabIndex = 1;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(140, 13);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePicker2.TabIndex = 20;
             // 
             // label5
             // 
@@ -269,19 +290,20 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txbTTNgayBD);
+            this.panel4.Controls.Add(this.dateTimePicker1);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(12, 111);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(276, 48);
             this.panel4.TabIndex = 3;
             // 
-            // txbTTNgayBD
+            // dateTimePicker1
             // 
-            this.txbTTNgayBD.Location = new System.Drawing.Point(131, 15);
-            this.txbTTNgayBD.Name = "txbTTNgayBD";
-            this.txbTTNgayBD.Size = new System.Drawing.Size(140, 20);
-            this.txbTTNgayBD.TabIndex = 1;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(131, 14);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePicker1.TabIndex = 19;
             // 
             // label4
             // 
@@ -304,6 +326,7 @@
             // 
             // txbTTMaKH
             // 
+            this.txbTTMaKH.Enabled = false;
             this.txbTTMaKH.Location = new System.Drawing.Point(131, 15);
             this.txbTTMaKH.Name = "txbTTMaKH";
             this.txbTTMaKH.Size = new System.Drawing.Size(140, 20);
@@ -313,11 +336,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(-1, 2);
+            this.label3.Location = new System.Drawing.Point(6, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 42);
+            this.label3.Size = new System.Drawing.Size(119, 21);
             this.label3.TabIndex = 2;
-            this.label3.Text = "  Mã khách hàng \r\nđang đặt phòng";
+            this.label3.Text = "Mã khách hàng";
             // 
             // panel2
             // 
@@ -330,6 +353,7 @@
             // 
             // txbTTMaLP
             // 
+            this.txbTTMaLP.Enabled = false;
             this.txbTTMaLP.Location = new System.Drawing.Point(131, 18);
             this.txbTTMaLP.Name = "txbTTMaLP";
             this.txbTTMaLP.Size = new System.Drawing.Size(140, 20);
@@ -364,10 +388,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -392,20 +416,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnTTDatPhong;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txbTTTinhTrang;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox txbTTMoTa;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox txbTTNgayDat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox txbTTNgayTraPhong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txbTTNgayBD;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txbTTMaKH;
@@ -414,5 +431,13 @@
         private System.Windows.Forms.TextBox txbTTMaLP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbTTDonGia;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label labelChuY;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.ComboBox cbxTTPhongTrong;
+        private System.Windows.Forms.Label label8;
     }
 }

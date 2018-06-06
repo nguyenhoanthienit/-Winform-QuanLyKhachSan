@@ -12,15 +12,13 @@ namespace QuanLyKhachSan.DAO
 {
     class KhachHangDAO
     {
-        static public SqlConnection _connection = null;
         static public SqlCommand _command = null;
-        static String _connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=DoAnCSDLNC_Index;Integrated Security=True";
         public static int ThemKhachHang(KhachHangDTO k)
         {
             try
             {
-                _connection = new SqlConnection(_connectionString);
-                _connection.Open();
+                SqlConnection _connection;
+                _connection = Connection.ConnectionData();
                 string proc = "sp_ThemKhachHang";
 
                 _command = new SqlCommand(proc);

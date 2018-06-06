@@ -1,4 +1,6 @@
 ﻿
+using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +16,11 @@ namespace QuanLyKhachSan
 {
     public partial class fDangNhap : Form
     {
-        String _connectionString = "";
         SqlConnection _connection = null;
         SqlCommand _command = null;
         public fDangNhap()
         {
             InitializeComponent();
-            _connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=DoAnCSDLNC_Index;Integrated Security=True";
         }
         
         #region methods
@@ -39,7 +39,7 @@ namespace QuanLyKhachSan
             if (txbDNTenDN.Text == "nv" && txbDNMk.Text == "nv")
             {
                 string username = "Nhân Viên";
-                UserInformation.CurrentLoggedInUser = username;
+                UserInformation.CurrentLoggedInUser.HoTen = username;
 
                 this.Hide();
                 fNhanVien f = new fNhanVien();
@@ -49,8 +49,7 @@ namespace QuanLyKhachSan
             {
                 try
                 {
-                    _connection = new SqlConnection(_connectionString);
-                    _connection.Open();
+                    _connection = Connection.ConnectionData();
                     string proc = "sp_DangNhap";
                     _command = new SqlCommand(proc);
                     _command.CommandType = CommandType.StoredProcedure;
@@ -70,7 +69,7 @@ namespace QuanLyKhachSan
                     MessageBox.Show("Xin chào \n" + maKH + "\n" + hoTen);
                     _connection.Close();
 
-                    string username = hoTen;
+                    KhachHangDTO username = new KhachHangDTO(maKH,hoTen,"","","","","","","");
                     UserInformation.CurrentLoggedInUser = username;
                     this.Hide();
                     fBatDau f = new fBatDau();
@@ -85,7 +84,7 @@ namespace QuanLyKhachSan
 
         internal class UserInformation
         {
-            public static string CurrentLoggedInUser
+            public static KhachHangDTO CurrentLoggedInUser
             {
                 get;
                 set;
