@@ -400,6 +400,7 @@ namespace QuanLyKhachSan
             this.dtgvTimKiemKhachSan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvTimKiemKhachSan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvTimKiemKhachSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTimKiemKhachSan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtgvTimKiemKhachSan.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dtgvTimKiemKhachSan.Location = new System.Drawing.Point(50, 293);
             this.dtgvTimKiemKhachSan.Name = "dtgvTimKiemKhachSan";
