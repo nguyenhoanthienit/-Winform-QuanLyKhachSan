@@ -34,6 +34,7 @@
             this.pictureBox101 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnDKDki = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txbDKEmail = new System.Windows.Forms.TextBox();
@@ -59,7 +60,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbDKHoTen = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelMKtrung = new System.Windows.Forms.Label();
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
             this.panel1.SuspendLayout();
@@ -118,6 +119,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelMKtrung);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.btnDKDki);
             this.panel1.Controls.Add(this.panel9);
@@ -133,6 +135,17 @@
             this.panel1.Size = new System.Drawing.Size(624, 321);
             this.panel1.TabIndex = 16;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DarkRed;
+            this.label10.Location = new System.Drawing.Point(201, 242);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(223, 20);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "*Bạn hãy điền đầy đủ thông tin";
+            // 
             // btnDKDki
             // 
             this.btnDKDki.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -141,7 +154,7 @@
             this.btnDKDki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDKDki.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnDKDki.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDKDki.Location = new System.Drawing.Point(204, 254);
+            this.btnDKDki.Location = new System.Drawing.Point(204, 265);
             this.btnDKDki.Name = "btnDKDki";
             this.btnDKDki.Size = new System.Drawing.Size(220, 47);
             this.btnDKDki.TabIndex = 9;
@@ -269,6 +282,7 @@
             this.txbDKNLMkhau.Size = new System.Drawing.Size(140, 20);
             this.txbDKNLMkhau.TabIndex = 4;
             this.txbDKNLMkhau.UseSystemPasswordChar = true;
+            this.txbDKNLMkhau.TextChanged += new System.EventHandler(this.txbDKNLMkhau_TextChanged);
             // 
             // label5
             // 
@@ -359,16 +373,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Họ tên";
             // 
-            // label10
+            // labelMKtrung
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DarkRed;
-            this.label10.Location = new System.Drawing.Point(201, 219);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(223, 20);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "*Bạn hãy điền đầy đủ thông tin";
+            this.labelMKtrung.AutoSize = true;
+            this.labelMKtrung.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMKtrung.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelMKtrung.Location = new System.Drawing.Point(151, 206);
+            this.labelMKtrung.Name = "labelMKtrung";
+            this.labelMKtrung.Size = new System.Drawing.Size(163, 15);
+            this.labelMKtrung.TabIndex = 16;
+            this.labelMKtrung.Text = "*Mật khẩu không giống nhau";
             // 
             // fDangKi
             // 
@@ -443,5 +457,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnDKDki;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelMKtrung;
     }
 }

@@ -231,12 +231,14 @@
             this.cbxDKTt.DisplayMember = "Đã xác nhận";
             this.cbxDKTt.FormattingEnabled = true;
             this.cbxDKTt.Items.AddRange(new object[] {
+            "--Chọn tình trạng",
             "Đã xác nhận",
             "Chưa xác nhận"});
             this.cbxDKTt.Location = new System.Drawing.Point(105, 13);
             this.cbxDKTt.Name = "cbxDKTt";
             this.cbxDKTt.Size = new System.Drawing.Size(140, 21);
             this.cbxDKTt.TabIndex = 3;
+            this.cbxDKTt.Text = "--Chọn tình trạng";
             this.cbxDKTt.ValueMember = "Đã xác nhận";
             // 
             // label9

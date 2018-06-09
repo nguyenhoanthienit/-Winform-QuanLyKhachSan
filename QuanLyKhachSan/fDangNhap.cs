@@ -29,9 +29,8 @@ namespace QuanLyKhachSan
         #region events
         private void btnDki_Click(object sender, EventArgs e)
         {
-            this.Hide();
             fDangKi f = new fDangKi();
-            f.Show();
+            f.ShowDialog();
         }
 
         private void btnDNDnhap_Click(object sender, EventArgs e)

@@ -18,6 +18,7 @@ namespace QuanLyKhachSan
         public fDangKi()
         {
             InitializeComponent();
+            labelMKtrung.Hide();
         }
 
         #region methods
@@ -43,6 +44,7 @@ namespace QuanLyKhachSan
             k.Email = txbDKEmail.Text;
             k.MoTa = "Đẹp trai";
 
+            
             int n = KhachHangBUS.ThemKhachHang(k);
             if (n > 0)
             {
@@ -56,6 +58,16 @@ namespace QuanLyKhachSan
         }
 
         #endregion
+
+        private void txbDKNLMkhau_TextChanged(object sender, EventArgs e)
+        {
+            if (txbDKNLMkhau.Text != txbDKMkhau.Text)
+            {
+                labelMKtrung.Show();
+            }
+            else
+                labelMKtrung.Hide();
+        }
 
     }
 }

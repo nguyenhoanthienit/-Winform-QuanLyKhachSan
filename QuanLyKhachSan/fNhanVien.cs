@@ -108,46 +108,48 @@ namespace QuanLyKhachSan
         private void btnNVBcao_Click(object sender, EventArgs e)
         {
             _connection = Connection.ConnectionData();
-            string proc = "sp_BaoCaoDoanhThu";
-            _command = new SqlCommand(proc);
-            _command.CommandType = CommandType.StoredProcedure;
-            _command.Connection = _connection;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = _command;
 
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+            string selectedThang = cbxNVChonThang.SelectedItem.ToString();
+            string selectedNam = cbxNVChonNam.SelectedItem.ToString();
 
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
+            int thang = -1, nam = -1;
 
-            dtgvNVTKBC.DataSource = bSource;
+            if (selectedThang != "--Chọn tháng")
+                thang = Convert.ToInt32(selectedThang);
+            if (selectedNam != "--Chọn năm")
+                nam = Convert.ToInt32(selectedNam);
+            string proc = "";
 
-            adapter.Update(table);
+            try
+            {
+                proc = "sp_BaoCaoDoanhThu";
+                _command = new SqlCommand(proc);
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.Connection = _connection;
+                _command.Parameters.Add("@thang", SqlDbType.Int);
+                _command.Parameters.Add("@nam", SqlDbType.Int);
 
-            label12.Text = "Báo cáo doanh thu";
-        }
+                _command.Parameters["@thang"].Value = thang;
+                _command.Parameters["@nam"].Value = nam;
 
-        private void btnNVTke_Click(object sender, EventArgs e)
-        {
-            _connection = Connection.ConnectionData();
-            string proc = "sp_ThongKePhongTrong";
-            _command = new SqlCommand(proc);
-            _command.CommandType = CommandType.StoredProcedure;
-            _command.Connection = _connection;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = _command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = _command;
 
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
 
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = table;
 
-            dtgvNVTKBC.DataSource = bSource;
+                dtgvNVBcao.DataSource = bSource;
+                adapter.Update(table);
+                label12.Text = "Báo cáo doanh thu";
+            }
+            catch (SqlException sqlEr)
+            {
+                MessageBox.Show(sqlEr.Message);
+            }
 
-            adapter.Update(table);
-            label12.Text = "Thống kê số lượng phòng trống";
         }
 
         private void btnNVTimKiem_Click(object sender, EventArgs e)
@@ -216,9 +218,38 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void dtgvNVTTHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnNVLoad_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex == -1 || (e.ColumnIndex == -1 && dtgvNVTTHD.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value.ToString() == "" || dtgvNVTTHD.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value.ToString() == ""))
+            _connection = Connection.ConnectionData();
+
+            string sql =
+                @"SELECT MONTH(ngayThanhToan) AS 'Tháng',YEAR(ngayThanhToan) AS 'Năm',SUM(tongTien) AS 'Tổng doanh thu'
+                    FROM HoaDon
+                    GROUP BY MONTH(ngayThanhToan), YEAR(ngayThanhToan)
+                    ORDER BY MONTH(ngayThanhToan)";
+            _command = new SqlCommand(sql, _connection);
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = _command;
+
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
+
+            dtgvNVBcao.DataSource = bSource;
+
+            adapter.Update(table);
+            _connection.Close();
+
+            label12.Text = "Báo cáo doanh thu";
+
+        }
+
+        private void dtgvNVTKe_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 || (e.ColumnIndex == -1 && dtgvNVTKe.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value.ToString() == "" || dtgvNVTKe.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value.ToString() == ""))
             {
                 return;
             }
@@ -227,6 +258,28 @@ namespace QuanLyKhachSan
             {
                 MessageBox.Show("Xác nhận chuẩn bị cho quá trình in !", "Thông báo");
             }
+        }
+
+        private void btnNVTke_Click_1(object sender, EventArgs e)
+        {
+            _connection = Connection.ConnectionData();
+            string proc = "sp_ThongKePhongTrong";
+            _command = new SqlCommand(proc);
+            _command.CommandType = CommandType.StoredProcedure;
+            _command.Connection = _connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = _command;
+
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
+
+            dtgvNVTKe.DataSource = bSource;
+
+            adapter.Update(table);
+            label123.Text = "Thống kê số lượng phòng trống";
         }
     }
 }

@@ -58,10 +58,15 @@ namespace QuanLyKhachSan
             d.NgayDat = DateTime.Now;
             d.DonGia = Convert.ToInt32(dgia);
             d.MoTa = "";
+            if (cbxDKTt.SelectedItem.ToString() == "--Chọn tình trạng")
+            {
+                MessageBox.Show("Vui lòng chọn tình trạng");
+                return;
+            }
             d.TinhTrang = cbxDKTt.SelectedItem.ToString();
             string phongTrong = "";
             phongTrong = cbxTTPhongTrong.SelectedValue.ToString();
-            //int tmp = Convert.ToInt32(phongTrong);
+
             int n = DatPhongBUS.DatPhong(d, phongTrong);
             if (n > 0)
             {

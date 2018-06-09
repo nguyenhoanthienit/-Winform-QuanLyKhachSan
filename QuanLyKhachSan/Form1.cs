@@ -1,4 +1,5 @@
 ﻿
+using QuanLyKhachSan.DAO;
 using QuanLyKhachSan.DTO;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace QuanLyKhachSan
         {
             fDangKi f = new fDangKi();
             f.ShowDialog();
+            this.Show();
         }
 
         private void btnDnhap_Click(object sender, EventArgs e)
@@ -79,7 +81,7 @@ namespace QuanLyKhachSan
             else
             {
                 loaiPhong = dtgvTimKiemKhachSan.Rows[e.RowIndex].Cells["Mã Loại Phòng"].Value.ToString();
-                donGia = dtgvTimKiemKhachSan.Rows[e.RowIndex].Cells["Đơn giá"].Value.ToString();
+                donGia = dtgvTimKiemKhachSan.Rows[e.RowIndex].Cells["Đơn giá phòng"].Value.ToString();
                 LoaiPhong.getLoaiPhong = loaiPhong;
                 LoaiPhong.getDonGia = donGia;
                 fDatPhong f = new fDatPhong();
@@ -105,134 +107,65 @@ namespace QuanLyKhachSan
 
         private void btnDVTimKiem_Click(object sender, EventArgs e)
         {
-            _connection = new SqlConnection(_connectionString);
-            _connection.Open();
+            _connection = Connection.ConnectionData();
 
-            string giaMin = cbxDVGiaMin.SelectedItem.ToString();
-            string giaMax = cbxDVGiaMax.SelectedItem.ToString();
-            string sao = cbxDVSao.SelectedItem.ToString();
-            string tpho = cbxDVTp.SelectedItem.ToString();
+            string selectedGiaMin = cbxDVGiaMin.SelectedItem.ToString();
+            string selectedGiaMax = cbxDVGiaMax.SelectedItem.ToString();
+            string selectedSoSao = cbxDVSao.SelectedItem.ToString();
+            string selectedTpho = cbxDVTp.SelectedItem.ToString();
+            int min = -1, max = -1, sao = -1;
 
+            if (selectedGiaMin != "--Chọn giá")
+                min = Convert.ToInt32(selectedGiaMin);
+            if (selectedGiaMax != "--Chọn giá")
+                max = Convert.ToInt32(selectedGiaMax);
+            if (selectedSoSao != "--Chọn hạng sao")
+                sao = Convert.ToInt32(selectedSoSao);
+            if (selectedTpho == "--Chọn thành phố")
+                selectedTpho = "";
             string proc = "";
-            if (tpho == "--Chọn thành phố")
+            //MessageBox.Show(min + "\n" + max + "\n" + sao + "\n" + selectedTpho);
+            //return;
+            try
             {
-                MessageBox.Show("*Chỉ hỗ trợ tìm kiếm theo\nGiá - Thành phố\nHạng sao - Thành phố\nThành phố");
-                return;
+                proc = "sp_TimKiemThongTinKhachSan";
+                _command = new SqlCommand(proc);
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.Connection = _connection;
+                _command.Parameters.Add("@min", SqlDbType.Int);
+                _command.Parameters.Add("@max", SqlDbType.Int);
+                _command.Parameters.Add("@sao", SqlDbType.Int);
+                _command.Parameters.Add("@tp", SqlDbType.NVarChar);
+
+                _command.Parameters["@min"].Value = min;
+                _command.Parameters["@max"].Value = max;
+                _command.Parameters["@sao"].Value = sao;
+                _command.Parameters["@tp"].Value = selectedTpho;
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = _command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = table;
+
+                dtgvTimKiemKhachSan.DataSource = bSource;
+                adapter.Update(table);
             }
-            else
+            catch (SqlException sqlE)
             {
-                if (sao == "--Chọn hạng sao")
-                {
-                    if (giaMin == "--Chọn giá")
-                    {
-                        proc = "sp_TimKiemThongTinKhachSanTheoGiaTP";
-                        _command = new SqlCommand(proc);
-                        _command.CommandType = CommandType.StoredProcedure;
-                        _command.Connection = _connection;
-                        _command.Parameters.Add("@giaMin", SqlDbType.Int);
-                        _command.Parameters.Add("@giaMax", SqlDbType.Int);
-                        _command.Parameters.Add("@tpho", SqlDbType.NVarChar);
-
-                        _command.Parameters["@giaMin"].Value = 0;
-                        _command.Parameters["@giaMax"].Value = giaMax;
-                        _command.Parameters["@tpho"].Value = tpho;
-                    }
-                    else if (giaMax == "--Chọn giá")
-                    {
-                        proc = "sp_TimKiemThongTinKhachSanTheoGiaTP";
-                        _command = new SqlCommand(proc);
-                        _command.CommandType = CommandType.StoredProcedure;
-                        _command.Connection = _connection;
-                        _command.Parameters.Add("@giaMin", SqlDbType.Int);
-                        _command.Parameters.Add("@giaMax", SqlDbType.Int);
-                        _command.Parameters.Add("@tpho", SqlDbType.NVarChar);
-
-                        _command.Parameters["@giaMin"].Value = giaMin;
-                        _command.Parameters["@giaMax"].Value = 500000;
-                        _command.Parameters["@tpho"].Value = tpho;
-                    }
-                    else
-                    {
-                        proc = "sp_TimKiemThongTinKhachSanTheoGiaTP";
-                        _command = new SqlCommand(proc);
-                        _command.CommandType = CommandType.StoredProcedure;
-                        _command.Connection = _connection;
-                        _command.Parameters.Add("@giaMin", SqlDbType.Int);
-                        _command.Parameters.Add("@giaMax", SqlDbType.Int);
-                        _command.Parameters.Add("@tpho", SqlDbType.NVarChar);
-
-                        _command.Parameters["@giaMin"].Value = giaMin;
-                        _command.Parameters["@giaMax"].Value = giaMax;
-                        _command.Parameters["@tpho"].Value = tpho;
-                    }
-                }
-
-                if (giaMin == "--Chọn giá" && giaMax == "--Chọn giá")
-                {
-                    if (sao == "--Chọn hạng sao")
-                    {
-                        proc = "sp_TimKiemThongTinKhachSanTheoTP";
-                        _command = new SqlCommand(proc);
-                        _command.CommandType = CommandType.StoredProcedure;
-                        _command.Connection = _connection;
-                        _command.Parameters.Add("@tpho", SqlDbType.NVarChar);
-
-                        _command.Parameters["@tpho"].Value = tpho;
-                    }
-                    else
-                    {
-                        proc = "sp_TimKiemThongTinKhachSanTheoSaoTP";
-                        _command = new SqlCommand(proc);
-                        _command.CommandType = CommandType.StoredProcedure;
-                        _command.Connection = _connection;
-                        _command.Parameters.Add("@sao", SqlDbType.Int);
-                        _command.Parameters.Add("@tpho", SqlDbType.NVarChar);
-
-                        _command.Parameters["@sao"].Value = sao;
-                        _command.Parameters["@tpho"].Value = tpho;
-                    }
-                }
-
-                if (giaMin != "--Chọn giá" && giaMax != "--Chọn giá" && sao != "--Chọn hạng sao")
-                {
-                    proc = "sp_TimKiemThongTinKhachSan";
-                    _command = new SqlCommand(proc);
-                    _command.CommandType = CommandType.StoredProcedure;
-                    _command.Connection = _connection;
-                    _command.Parameters.Add("@giaMin", SqlDbType.Int);
-                    _command.Parameters.Add("@giaMax", SqlDbType.Int);
-                    _command.Parameters.Add("@sao", SqlDbType.Int);
-                    _command.Parameters.Add("@tpho", SqlDbType.NVarChar);
-
-                    _command.Parameters["@giaMin"].Value = giaMin;
-                    _command.Parameters["@giaMax"].Value = giaMax;
-                    _command.Parameters["@sao"].Value = sao;
-                    _command.Parameters["@tpho"].Value = tpho;
-                }
+                MessageBox.Show(sqlE.Message);
             }
-            
-           
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = _command;
-
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
-
-            dtgvTimKiemKhachSan.DataSource = bSource;
-            adapter.Update(table);
         }
 
         public void LoadData()
         {
-            _connection = new SqlConnection(_connectionString);
-            _connection.Open();
+            _connection = Connection.ConnectionData();
 
             string sql = 
-                @"SELECT L.maLoaiPhong AS 'Mã loại phòng',L.tenLoaiPhong AS 'Tên loại phòng',L.donGia AS 'Đơn giá', L.moTa AS 'Mô tả', L.slTrong AS 'Số lượng trống', K.tenKS AS 'Tên khách sạn', K.giaTB AS 'Giá TB khách sạn', K.soSao AS 'Số sao',K.thanhPho AS 'Thành phố'
+                @"SELECT L.maLoaiPhong AS 'Mã loại phòng',L.tenLoaiPhong AS 'Tên loại phòng',L.donGia AS 'Đơn giá phòng', L.moTa AS 'Mô tả', L.slTrong AS 'Số lượng trống', K.tenKS AS 'Tên khách sạn', K.giaTB AS 'Giá TB khách sạn', K.soSao AS 'Số sao',K.thanhPho AS 'Thành phố'
 	                FROM LoaiPhong L, KhachSan K
 	                WHERE L.maKS = K.maKS AND L.slTrong > 0";
             _command = new SqlCommand(sql, _connection);            
@@ -249,6 +182,7 @@ namespace QuanLyKhachSan
             dtgvTimKiemKhachSan.DataSource = bSource;
 
             adapter.Update(table);
+            _connection.Close();
         }
 
         private void btnDVLoad_Click(object sender, EventArgs e)

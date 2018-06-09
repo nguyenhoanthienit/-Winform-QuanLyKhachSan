@@ -30,7 +30,6 @@ namespace QuanLyKhachSan
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBatDau));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,7 +53,7 @@ namespace QuanLyKhachSan
             this.dtgvTimKiemKhachSan = new System.Windows.Forms.DataGridView();
             this.labelChuY = new System.Windows.Forms.Label();
             this.btnDVLoad = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
@@ -98,7 +97,6 @@ namespace QuanLyKhachSan
             this.btnDVTimKiem.Size = new System.Drawing.Size(96, 57);
             this.btnDVTimKiem.TabIndex = 5;
             this.btnDVTimKiem.Text = "TÌM THEO TIÊU CHÍ KHÁCH SẠN";
-            this.toolTip1.SetToolTip(this.btnDVTimKiem, "*Chỉ hỗ trợ tìm kiếm theo\r\nGiá - Thành phố\r\nHạng sao - Thành phố\r\nThành phố");
             this.btnDVTimKiem.UseVisualStyleBackColor = false;
             this.btnDVTimKiem.Click += new System.EventHandler(this.btnDVTimKiem_Click);
             // 
@@ -226,7 +224,7 @@ namespace QuanLyKhachSan
             "Yên Bái"});
             this.cbxDVTp.Location = new System.Drawing.Point(433, 49);
             this.cbxDVTp.Name = "cbxDVTp";
-            this.cbxDVTp.Size = new System.Drawing.Size(107, 21);
+            this.cbxDVTp.Size = new System.Drawing.Size(118, 21);
             this.cbxDVTp.TabIndex = 3;
             this.cbxDVTp.Text = "--Chọn thành phố";
             this.cbxDVTp.ValueMember = "--Chọn thành phố";
@@ -242,7 +240,7 @@ namespace QuanLyKhachSan
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cbxDVGiaMin);
             this.panel1.Controls.Add(this.cbxDVSao);
-            this.panel1.Location = new System.Drawing.Point(12, 152);
+            this.panel1.Location = new System.Drawing.Point(6, 173);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(691, 84);
             this.panel1.TabIndex = 10;
@@ -397,12 +395,13 @@ namespace QuanLyKhachSan
             // 
             // dtgvTimKiemKhachSan
             // 
+            this.dtgvTimKiemKhachSan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvTimKiemKhachSan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvTimKiemKhachSan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvTimKiemKhachSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTimKiemKhachSan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtgvTimKiemKhachSan.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dtgvTimKiemKhachSan.Location = new System.Drawing.Point(50, 293);
+            this.dtgvTimKiemKhachSan.Location = new System.Drawing.Point(42, 312);
             this.dtgvTimKiemKhachSan.Name = "dtgvTimKiemKhachSan";
             this.dtgvTimKiemKhachSan.Size = new System.Drawing.Size(641, 356);
             this.dtgvTimKiemKhachSan.TabIndex = 14;
@@ -413,7 +412,7 @@ namespace QuanLyKhachSan
             this.labelChuY.AutoSize = true;
             this.labelChuY.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChuY.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelChuY.Location = new System.Drawing.Point(68, 246);
+            this.labelChuY.Location = new System.Drawing.Point(68, 267);
             this.labelChuY.Name = "labelChuY";
             this.labelChuY.Size = new System.Drawing.Size(336, 40);
             this.labelChuY.TabIndex = 15;
@@ -427,7 +426,7 @@ namespace QuanLyKhachSan
             this.btnDVLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDVLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btnDVLoad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDVLoad.Location = new System.Drawing.Point(541, 264);
+            this.btnDVLoad.Location = new System.Drawing.Point(536, 271);
             this.btnDVLoad.Name = "btnDVLoad";
             this.btnDVLoad.Size = new System.Drawing.Size(150, 25);
             this.btnDVLoad.TabIndex = 9;
@@ -435,12 +434,24 @@ namespace QuanLyKhachSan
             this.btnDVLoad.UseVisualStyleBackColor = false;
             this.btnDVLoad.Click += new System.EventHandler(this.btnDVLoad_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label5.Location = new System.Drawing.Point(51, 148);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(196, 30);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Giá TB khách sạn";
+            // 
             // fBatDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(707, 661);
+            this.ClientSize = new System.Drawing.Size(707, 673);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnDVLoad);
             this.Controls.Add(this.labelChuY);
             this.Controls.Add(this.dtgvTimKiemKhachSan);
@@ -495,7 +506,7 @@ namespace QuanLyKhachSan
         private ComboBox cbxDVGiaMax;
         private Label label6;
         private Label label2;
-        private ToolTip toolTip1;
+        private Label label5;
         
     }
 }
