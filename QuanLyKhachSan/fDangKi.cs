@@ -43,6 +43,11 @@ namespace QuanLyKhachSan
             k.Email = txbDKEmail.Text;
             k.MoTa = "Đẹp trai";
 
+            if (k.MatKhau != txbDKNLMkhau.Text || txbDKNLMkhau.Text == "")
+            {
+                MessageBox.Show("Lỗi : Mật khẩu không giống nhau !");
+                return;
+            }
             
             int n = KhachHangBUS.ThemKhachHang(k);
             if (n > 0)
