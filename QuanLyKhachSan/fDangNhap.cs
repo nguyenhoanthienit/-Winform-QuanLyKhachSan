@@ -70,6 +70,7 @@ namespace QuanLyKhachSan
                     this.Hide();
                     fBatDau f = new fBatDau();
                     f.Show();
+                    _connection.Close();
                 }
                 catch (SqlException ex)
                 {

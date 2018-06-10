@@ -144,6 +144,7 @@ namespace QuanLyKhachSan
                 dtgvNVBcao.DataSource = bSource;
                 adapter.Update(table);
                 label12.Text = "Báo cáo doanh thu";
+                _connection.Close();
             }
             catch (SqlException sqlEr)
             {
@@ -194,6 +195,7 @@ namespace QuanLyKhachSan
                 adapter.Update(table);
 
                 labelIn.Show();
+                _connection.Close();
             }
             catch (SqlException error)
             {
@@ -244,6 +246,7 @@ namespace QuanLyKhachSan
             _connection.Close();
 
             label12.Text = "Báo cáo doanh thu";
+            _connection.Close();
 
         }
 
@@ -280,6 +283,7 @@ namespace QuanLyKhachSan
 
             adapter.Update(table);
             label123.Text = "Thống kê số lượng phòng trống";
+            _connection.Close();
         }
     }
 }

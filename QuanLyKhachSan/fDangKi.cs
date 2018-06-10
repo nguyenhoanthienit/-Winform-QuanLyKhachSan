@@ -18,7 +18,6 @@ namespace QuanLyKhachSan
         public fDangKi()
         {
             InitializeComponent();
-            labelMKtrung.Hide();
         }
 
         #region methods
@@ -59,14 +58,25 @@ namespace QuanLyKhachSan
 
         #endregion
 
-        private void txbDKNLMkhau_TextChanged(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (txbDKNLMkhau.Text != txbDKMkhau.Text)
+            if (txbDKMkhau.UseSystemPasswordChar == true)
             {
-                labelMKtrung.Show();
+                txbDKMkhau.UseSystemPasswordChar = false;
             }
             else
-                labelMKtrung.Hide();
+                txbDKMkhau.UseSystemPasswordChar = true;
+            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (txbDKNLMkhau.UseSystemPasswordChar == true)
+            {
+                txbDKNLMkhau.UseSystemPasswordChar = false;
+            }
+            else
+                txbDKNLMkhau.UseSystemPasswordChar = true;
         }
 
     }

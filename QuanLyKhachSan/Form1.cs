@@ -17,7 +17,6 @@ namespace QuanLyKhachSan
 {
     public partial class fBatDau : Form
     {
-        String _connectionString = "";
         SqlConnection _connection = null;
         SqlCommand _command = null;
         KhachHangDTO currentUser = fDangNhap.UserInformation.CurrentLoggedInUser;
@@ -25,8 +24,7 @@ namespace QuanLyKhachSan
         public fBatDau()
         {
             InitializeComponent();
-            _connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=DoAnCSDLNC_Index;Integrated Security=True";
-            LoadData();
+            //LoadData();
         }
         private void btnDki_Click(object sender, EventArgs e)
         {
@@ -153,6 +151,8 @@ namespace QuanLyKhachSan
 
                 dtgvTimKiemKhachSan.DataSource = bSource;
                 adapter.Update(table);
+
+                _connection.Close();
             }
             catch (SqlException sqlE)
             {
