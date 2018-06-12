@@ -24,8 +24,9 @@ namespace QuanLyKhachSan
         public fBatDau()
         {
             InitializeComponent();
-            //LoadData();
+            LoadData();
         }
+
         private void btnDki_Click(object sender, EventArgs e)
         {
             fDangKi f = new fDangKi();
@@ -97,10 +98,14 @@ namespace QuanLyKhachSan
 
         private void btnDVDxuat_Click(object sender, EventArgs e)
         {
-            btnDVDnhap.Show();
-            btnDVDki.Show();
-            btnDVDxuat.Hide();
-            labelTenKH.Text = null;
+            //btnDVDnhap.Show();
+            //btnDVDki.Show();
+            //btnDVDxuat.Hide();
+            //labelTenKH.Text = null;
+            this.Hide();
+            fDangNhap.UserInformation.CurrentLoggedInUser = null;
+            fBatDau f = new fBatDau();
+            f.Show();
         }
 
         private void btnDVTimKiem_Click(object sender, EventArgs e)

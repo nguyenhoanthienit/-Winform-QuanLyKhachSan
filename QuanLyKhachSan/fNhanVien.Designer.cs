@@ -284,10 +284,10 @@
             // 
             // txbNVMaDP
             // 
-            this.txbNVMaDP.Location = new System.Drawing.Point(139, 21);
+            this.txbNVMaDP.Location = new System.Drawing.Point(139, 18);
             this.txbNVMaDP.Multiline = true;
             this.txbNVMaDP.Name = "txbNVMaDP";
-            this.txbNVMaDP.Size = new System.Drawing.Size(267, 23);
+            this.txbNVMaDP.Size = new System.Drawing.Size(267, 28);
             this.txbNVMaDP.TabIndex = 1;
             // 
             // tabPage2
