@@ -33,27 +33,28 @@ namespace QuanLyKhachSan
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBatDau));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnDVTimKiem = new System.Windows.Forms.Button();
             this.cbxDVGiaMin = new System.Windows.Forms.ComboBox();
             this.cbxDVSao = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxDVTp = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbxDVGiaMax = new System.Windows.Forms.ComboBox();
+            this.btnDVTimKiem = new System.Windows.Forms.Button();
             this.panel301 = new System.Windows.Forms.Panel();
             this.label201 = new System.Windows.Forms.Label();
             this.pictureBox101 = new System.Windows.Forms.PictureBox();
+            this.panelDV = new System.Windows.Forms.Panel();
+            this.txbTenKH = new System.Windows.Forms.TextBox();
+            this.btnDVDxuat = new System.Windows.Forms.Button();
             this.btnDVDnhap = new System.Windows.Forms.Button();
             this.btnDVDki = new System.Windows.Forms.Button();
-            this.panelDV = new System.Windows.Forms.Panel();
-            this.labelTenKH = new System.Windows.Forms.Label();
-            this.btnDVDxuat = new System.Windows.Forms.Button();
             this.dtgvTimKiemKhachSan = new System.Windows.Forms.DataGridView();
             this.labelChuY = new System.Windows.Forms.Label();
             this.btnDVLoad = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
@@ -78,27 +79,11 @@ namespace QuanLyKhachSan
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Location = new System.Drawing.Point(276, 9);
+            this.label3.Location = new System.Drawing.Point(247, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 30);
             this.label3.TabIndex = 4;
             this.label3.Text = "Hạng sao";
-            // 
-            // btnDVTimKiem
-            // 
-            this.btnDVTimKiem.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnDVTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDVTimKiem.FlatAppearance.BorderSize = 0;
-            this.btnDVTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDVTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.btnDVTimKiem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDVTimKiem.Location = new System.Drawing.Point(583, 13);
-            this.btnDVTimKiem.Name = "btnDVTimKiem";
-            this.btnDVTimKiem.Size = new System.Drawing.Size(96, 57);
-            this.btnDVTimKiem.TabIndex = 5;
-            this.btnDVTimKiem.Text = "TÌM THEO TIÊU CHÍ KHÁCH SẠN";
-            this.btnDVTimKiem.UseVisualStyleBackColor = false;
-            this.btnDVTimKiem.Click += new System.EventHandler(this.btnDVTimKiem_Click);
             // 
             // cbxDVGiaMin
             // 
@@ -114,7 +99,7 @@ namespace QuanLyKhachSan
             "300000",
             "400000",
             "500000"});
-            this.cbxDVGiaMin.Location = new System.Drawing.Point(128, 13);
+            this.cbxDVGiaMin.Location = new System.Drawing.Point(99, 53);
             this.cbxDVGiaMin.Name = "cbxDVGiaMin";
             this.cbxDVGiaMin.Size = new System.Drawing.Size(107, 21);
             this.cbxDVGiaMin.TabIndex = 1;
@@ -133,7 +118,7 @@ namespace QuanLyKhachSan
             "3",
             "4",
             "5"});
-            this.cbxDVSao.Location = new System.Drawing.Point(283, 49);
+            this.cbxDVSao.Location = new System.Drawing.Point(254, 53);
             this.cbxDVSao.Name = "cbxDVSao";
             this.cbxDVSao.Size = new System.Drawing.Size(107, 21);
             this.cbxDVSao.TabIndex = 2;
@@ -144,7 +129,7 @@ namespace QuanLyKhachSan
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label4.Location = new System.Drawing.Point(428, 9);
+            this.label4.Location = new System.Drawing.Point(399, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 30);
             this.label4.TabIndex = 8;
@@ -222,7 +207,7 @@ namespace QuanLyKhachSan
             "Vĩnh Long",
             "Vĩnh Phúc",
             "Yên Bái"});
-            this.cbxDVTp.Location = new System.Drawing.Point(433, 49);
+            this.cbxDVTp.Location = new System.Drawing.Point(404, 53);
             this.cbxDVTp.Name = "cbxDVTp";
             this.cbxDVTp.Size = new System.Drawing.Size(118, 21);
             this.cbxDVTp.TabIndex = 3;
@@ -232,6 +217,7 @@ namespace QuanLyKhachSan
             // panel1
             // 
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.cbxDVGiaMax);
             this.panel1.Controls.Add(this.label3);
@@ -240,9 +226,9 @@ namespace QuanLyKhachSan
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cbxDVGiaMin);
             this.panel1.Controls.Add(this.cbxDVSao);
-            this.panel1.Location = new System.Drawing.Point(6, 173);
+            this.panel1.Location = new System.Drawing.Point(7, 175);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(691, 84);
+            this.panel1.Size = new System.Drawing.Size(691, 114);
             this.panel1.TabIndex = 10;
             // 
             // label2
@@ -250,18 +236,29 @@ namespace QuanLyKhachSan
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(68, 8);
+            this.label2.Location = new System.Drawing.Point(39, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 30);
             this.label2.TabIndex = 12;
             this.label2.Text = "Từ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label5.Location = new System.Drawing.Point(13, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(196, 30);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Giá TB khách sạn";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label6.Location = new System.Drawing.Point(55, 43);
+            this.label6.Location = new System.Drawing.Point(26, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 30);
             this.label6.TabIndex = 11;
@@ -280,11 +277,29 @@ namespace QuanLyKhachSan
             "300000",
             "400000",
             "500000"});
-            this.cbxDVGiaMax.Location = new System.Drawing.Point(128, 49);
+            this.cbxDVGiaMax.Location = new System.Drawing.Point(99, 89);
             this.cbxDVGiaMax.Name = "cbxDVGiaMax";
             this.cbxDVGiaMax.Size = new System.Drawing.Size(107, 21);
             this.cbxDVGiaMax.TabIndex = 9;
             this.cbxDVGiaMax.Text = "--Chọn giá";
+            // 
+            // btnDVTimKiem
+            // 
+            this.btnDVTimKiem.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnDVTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDVTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnDVTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDVTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btnDVTimKiem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDVTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnDVTimKiem.Image")));
+            this.btnDVTimKiem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnDVTimKiem.Location = new System.Drawing.Point(564, 40);
+            this.btnDVTimKiem.Name = "btnDVTimKiem";
+            this.btnDVTimKiem.Size = new System.Drawing.Size(108, 34);
+            this.btnDVTimKiem.TabIndex = 5;
+            this.btnDVTimKiem.Text = "    TÌM KIẾM";
+            this.btnDVTimKiem.UseVisualStyleBackColor = false;
+            this.btnDVTimKiem.Click += new System.EventHandler(this.btnDVTimKiem_Click);
             // 
             // panel301
             // 
@@ -317,6 +332,50 @@ namespace QuanLyKhachSan
             this.pictureBox101.TabIndex = 4;
             this.pictureBox101.TabStop = false;
             // 
+            // panelDV
+            // 
+            this.panelDV.Controls.Add(this.txbTenKH);
+            this.panelDV.Controls.Add(this.btnDVDxuat);
+            this.panelDV.Controls.Add(this.btnDVDnhap);
+            this.panelDV.Controls.Add(this.btnDVDki);
+            this.panelDV.Location = new System.Drawing.Point(336, 5);
+            this.panelDV.Name = "panelDV";
+            this.panelDV.Size = new System.Drawing.Size(367, 62);
+            this.panelDV.TabIndex = 13;
+            // 
+            // txbTenKH
+            // 
+            this.txbTenKH.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txbTenKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTenKH.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txbTenKH.Font = new System.Drawing.Font("Segoe UI", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenKH.ForeColor = System.Drawing.Color.Indigo;
+            this.txbTenKH.Location = new System.Drawing.Point(-162, 2);
+            this.txbTenKH.Name = "txbTenKH";
+            this.txbTenKH.Size = new System.Drawing.Size(524, 29);
+            this.txbTenKH.TabIndex = 17;
+            this.txbTenKH.Text = "Xin chào ";
+            this.txbTenKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btnDVDxuat
+            // 
+            this.btnDVDxuat.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDVDxuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDVDxuat.FlatAppearance.BorderSize = 0;
+            this.btnDVDxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDVDxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btnDVDxuat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDVDxuat.Image = global::QuanLyKhachSan.Properties.Resources.sign_out_option;
+            this.btnDVDxuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDVDxuat.Location = new System.Drawing.Point(251, 36);
+            this.btnDVDxuat.Name = "btnDVDxuat";
+            this.btnDVDxuat.Size = new System.Drawing.Size(111, 23);
+            this.btnDVDxuat.TabIndex = 13;
+            this.btnDVDxuat.Tag = "";
+            this.btnDVDxuat.Text = "     ĐĂNG XUẤT";
+            this.btnDVDxuat.UseVisualStyleBackColor = false;
+            this.btnDVDxuat.Click += new System.EventHandler(this.btnDVDxuat_Click);
+            // 
             // btnDVDnhap
             // 
             this.btnDVDnhap.BackColor = System.Drawing.Color.DarkRed;
@@ -325,13 +384,14 @@ namespace QuanLyKhachSan
             this.btnDVDnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDVDnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btnDVDnhap.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDVDnhap.Image = global::QuanLyKhachSan.Properties.Resources.man_user;
             this.btnDVDnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDVDnhap.Location = new System.Drawing.Point(179, 8);
+            this.btnDVDnhap.Location = new System.Drawing.Point(154, 7);
             this.btnDVDnhap.Name = "btnDVDnhap";
-            this.btnDVDnhap.Size = new System.Drawing.Size(90, 23);
+            this.btnDVDnhap.Size = new System.Drawing.Size(111, 23);
             this.btnDVDnhap.TabIndex = 10;
             this.btnDVDnhap.Tag = "";
-            this.btnDVDnhap.Text = "ĐĂNG NHẬP";
+            this.btnDVDnhap.Text = "     ĐĂNG NHẬP";
             this.btnDVDnhap.UseVisualStyleBackColor = false;
             this.btnDVDnhap.Click += new System.EventHandler(this.btnDnhap_Click);
             // 
@@ -343,55 +403,16 @@ namespace QuanLyKhachSan
             this.btnDVDki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDVDki.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btnDVDki.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDVDki.Image = global::QuanLyKhachSan.Properties.Resources.pencil_edit_button;
             this.btnDVDki.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDVDki.Location = new System.Drawing.Point(271, 8);
+            this.btnDVDki.Location = new System.Drawing.Point(271, 7);
             this.btnDVDki.Name = "btnDVDki";
-            this.btnDVDki.Size = new System.Drawing.Size(90, 23);
+            this.btnDVDki.Size = new System.Drawing.Size(91, 23);
             this.btnDVDki.TabIndex = 12;
             this.btnDVDki.Tag = "";
-            this.btnDVDki.Text = "ĐĂNG KÍ";
+            this.btnDVDki.Text = "     ĐĂNG KÍ";
             this.btnDVDki.UseVisualStyleBackColor = false;
             this.btnDVDki.Click += new System.EventHandler(this.btnDki_Click);
-            // 
-            // panelDV
-            // 
-            this.panelDV.Controls.Add(this.labelTenKH);
-            this.panelDV.Controls.Add(this.btnDVDxuat);
-            this.panelDV.Controls.Add(this.btnDVDnhap);
-            this.panelDV.Controls.Add(this.btnDVDki);
-            this.panelDV.Location = new System.Drawing.Point(336, 5);
-            this.panelDV.Name = "panelDV";
-            this.panelDV.Size = new System.Drawing.Size(367, 62);
-            this.panelDV.TabIndex = 13;
-            // 
-            // labelTenKH
-            // 
-            this.labelTenKH.AutoSize = true;
-            this.labelTenKH.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelTenKH.Font = new System.Drawing.Font("Segoe UI", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenKH.ForeColor = System.Drawing.Color.Indigo;
-            this.labelTenKH.Location = new System.Drawing.Point(133, 3);
-            this.labelTenKH.Name = "labelTenKH";
-            this.labelTenKH.Size = new System.Drawing.Size(0, 30);
-            this.labelTenKH.TabIndex = 16;
-            // 
-            // btnDVDxuat
-            // 
-            this.btnDVDxuat.BackColor = System.Drawing.Color.DarkRed;
-            this.btnDVDxuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDVDxuat.FlatAppearance.BorderSize = 0;
-            this.btnDVDxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDVDxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.btnDVDxuat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDVDxuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDVDxuat.Location = new System.Drawing.Point(271, 36);
-            this.btnDVDxuat.Name = "btnDVDxuat";
-            this.btnDVDxuat.Size = new System.Drawing.Size(90, 23);
-            this.btnDVDxuat.TabIndex = 13;
-            this.btnDVDxuat.Tag = "";
-            this.btnDVDxuat.Text = "ĐĂNG XUẤT";
-            this.btnDVDxuat.UseVisualStyleBackColor = false;
-            this.btnDVDxuat.Click += new System.EventHandler(this.btnDVDxuat_Click);
             // 
             // dtgvTimKiemKhachSan
             // 
@@ -401,9 +422,9 @@ namespace QuanLyKhachSan
             this.dtgvTimKiemKhachSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTimKiemKhachSan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtgvTimKiemKhachSan.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dtgvTimKiemKhachSan.Location = new System.Drawing.Point(42, 312);
+            this.dtgvTimKiemKhachSan.Location = new System.Drawing.Point(36, 339);
             this.dtgvTimKiemKhachSan.Name = "dtgvTimKiemKhachSan";
-            this.dtgvTimKiemKhachSan.Size = new System.Drawing.Size(641, 356);
+            this.dtgvTimKiemKhachSan.Size = new System.Drawing.Size(641, 297);
             this.dtgvTimKiemKhachSan.TabIndex = 14;
             this.dtgvTimKiemKhachSan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -412,46 +433,48 @@ namespace QuanLyKhachSan
             this.labelChuY.AutoSize = true;
             this.labelChuY.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChuY.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelChuY.Location = new System.Drawing.Point(68, 267);
+            this.labelChuY.Location = new System.Drawing.Point(32, 640);
             this.labelChuY.Name = "labelChuY";
-            this.labelChuY.Size = new System.Drawing.Size(336, 40);
+            this.labelChuY.Size = new System.Drawing.Size(336, 20);
             this.labelChuY.TabIndex = 15;
-            this.labelChuY.Text = "*Click vào dòng có phòng cần đặt để đặt phòng\r\n*Chỉ hiển thị phòng trống";
+            this.labelChuY.Text = "*Click vào dòng có phòng cần đặt để đặt phòng\r\n";
             // 
             // btnDVLoad
             // 
-            this.btnDVLoad.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnDVLoad.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDVLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDVLoad.FlatAppearance.BorderSize = 0;
             this.btnDVLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDVLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.btnDVLoad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDVLoad.Location = new System.Drawing.Point(536, 271);
+            this.btnDVLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDVLoad.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnDVLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnDVLoad.Image")));
+            this.btnDVLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDVLoad.Location = new System.Drawing.Point(567, 300);
             this.btnDVLoad.Name = "btnDVLoad";
-            this.btnDVLoad.Size = new System.Drawing.Size(150, 25);
+            this.btnDVLoad.Size = new System.Drawing.Size(110, 39);
             this.btnDVLoad.TabIndex = 9;
-            this.btnDVLoad.Text = "Xuất tất cả phòng trống";
+            this.btnDVLoad.Text = "       Refresh";
             this.btnDVLoad.UseVisualStyleBackColor = false;
             this.btnDVLoad.Click += new System.EventHandler(this.btnDVLoad_Click);
             // 
-            // label5
+            // label7
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label5.Location = new System.Drawing.Point(51, 148);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(196, 30);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Giá TB khách sạn";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkRed;
+            this.label7.Location = new System.Drawing.Point(32, 312);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(197, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Danh sách các phòng trống";
             // 
             // fBatDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(707, 673);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(707, 689);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnDVLoad);
             this.Controls.Add(this.labelChuY);
             this.Controls.Add(this.dtgvTimKiemKhachSan);
@@ -459,6 +482,7 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.panel301);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "fBatDau";
@@ -501,12 +525,13 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.DataGridView dtgvTimKiemKhachSan;
         private Label labelChuY;
         private Button btnDVDxuat;
-        private Label labelTenKH;
         private Button btnDVLoad;
         private ComboBox cbxDVGiaMax;
         private Label label6;
         private Label label2;
         private Label label5;
+        private Label label7;
+        private TextBox txbTenKH;
         
     }
 }

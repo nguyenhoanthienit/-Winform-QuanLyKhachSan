@@ -25,8 +25,11 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
             LoadData();
+            txbTenKH.ReadOnly = true;
+            txbTenKH.Hide();
         }
 
+        #region events
         private void btnDki_Click(object sender, EventArgs e)
         {
             fDangKi f = new fDangKi();
@@ -56,15 +59,15 @@ namespace QuanLyKhachSan
                 btnDVDnhap.Hide();
                 btnDVDki.Hide();
                 btnDVDxuat.Show();
-                labelTenKH.Text = currentUser.HoTen;
-                labelTenKH.Show();
+                txbTenKH.Text += currentUser.HoTen;
+                txbTenKH.Show();
             }
             else
             {
                 btnDVDnhap.Show();
                 btnDVDki.Show();
                 btnDVDxuat.Hide();
-                labelTenKH.Text = null;
+                txbTenKH.Text = null;
             }
         }
 
@@ -165,15 +168,27 @@ namespace QuanLyKhachSan
             }
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnDVLoad_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        #endregion
+
+        #region function
         public void LoadData()
         {
             _connection = Connection.ConnectionData();
 
-            string sql = 
+            string sql =
                 @"SELECT L.maLoaiPhong AS 'Mã loại phòng',L.tenLoaiPhong AS 'Tên loại phòng',L.donGia AS 'Đơn giá phòng', L.moTa AS 'Mô tả', L.slTrong AS 'Số lượng trống', K.tenKS AS 'Tên khách sạn', K.giaTB AS 'Giá TB khách sạn', K.soSao AS 'Số sao',K.thanhPho AS 'Thành phố'
 	                FROM LoaiPhong L, KhachSan K
 	                WHERE L.maKS = K.maKS AND L.slTrong > 0";
-            _command = new SqlCommand(sql, _connection);            
+            _command = new SqlCommand(sql, _connection);
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = _command;
@@ -188,11 +203,12 @@ namespace QuanLyKhachSan
 
             adapter.Update(table);
             _connection.Close();
-        }
 
-        private void btnDVLoad_Click(object sender, EventArgs e)
-        {
-            LoadData();
+            cbxDVGiaMin.Text = "--Chọn giá";
+            cbxDVGiaMax.Text = "--Chọn giá";
+            cbxDVSao.Text = "--Chọn sao";
+            cbxDVTp.Text = "--Chọn thành phố";
+
         }
 
         internal class LoaiPhong
@@ -208,5 +224,8 @@ namespace QuanLyKhachSan
                 set;
             }
         }
+
+        
+        #endregion
     }
 }

@@ -395,11 +395,13 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel301);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "fDatPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tình trạng";
+            this.Text = "Đặt phòng";
+            this.Load += new System.EventHandler(this.fDatPhong_Load);
             this.panel301.ResumeLayout(false);
             this.panel301.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).EndInit();

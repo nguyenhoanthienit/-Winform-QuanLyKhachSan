@@ -24,6 +24,14 @@ namespace QuanLyKhachSan
         }
         
         #region methods
+        internal class UserInformation
+        {
+            public static KhachHangDTO CurrentLoggedInUser
+            {
+                get;
+                set;
+            }
+        }
         #endregion
 
         #region events
@@ -79,14 +87,7 @@ namespace QuanLyKhachSan
             }
         }
 
-        internal class UserInformation
-        {
-            public static KhachHangDTO CurrentLoggedInUser
-            {
-                get;
-                set;
-            }
-        }
+        
         private void fDangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
             fBatDau f = new fBatDau();

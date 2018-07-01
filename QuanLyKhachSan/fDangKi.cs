@@ -18,6 +18,8 @@ namespace QuanLyKhachSan
         public fDangKi()
         {
             InitializeComponent();
+            labelKTCMND.Hide();
+            labelKTSDT.Hide();
         }
 
         #region methods
@@ -41,7 +43,13 @@ namespace QuanLyKhachSan
             k.SoDienThoai = txbDKDT.Text;
             k.DiaChi = txbDKDC.Text;
             k.Email = txbDKEmail.Text;
-            k.MoTa = "Đẹp trai";
+            k.MoTa = "";
+
+            if (k.HoTen == "" || k.TenDangNhap == "" || k.MatKhau == "" || txbDKNLMkhau.Text == "" || k.SoCMND == "" || k.SoDienThoai == "" || k.DiaChi == "" || k.Email == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                return;
+            }
 
             if (k.MatKhau != txbDKNLMkhau.Text || txbDKNLMkhau.Text == "")
             {
@@ -61,7 +69,7 @@ namespace QuanLyKhachSan
             }
         }
 
-        #endregion
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -84,5 +92,29 @@ namespace QuanLyKhachSan
                 txbDKNLMkhau.UseSystemPasswordChar = true;
         }
 
+        private void txbDKCMND_TextChanged(object sender, EventArgs e)
+        {
+            if (txbDKCMND.Text.Length != 9 && txbDKCMND.Text.Length != 12)
+            {
+                labelKTCMND.Show();
+            }
+            else
+            {
+                labelKTCMND.Hide();
+            }
+        }
+
+        private void txbDKDT_TextChanged(object sender, EventArgs e)
+        {
+            if (txbDKDT.Text.Length != 10 && txbDKDT.Text.Length != 11)
+            {
+                labelKTSDT.Show();
+            }
+            else
+            {
+                labelKTSDT.Hide();
+            }
+        }
+        #endregion
     }
 }

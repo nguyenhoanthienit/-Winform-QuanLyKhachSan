@@ -40,13 +40,9 @@ namespace QuanLyKhachSan
             LoadComboboxData();
         }
 
-        public string RandomMaDP()
-        {
-            Random r = new Random();
-            string maDP = "DP" + r.Next(10, 99999999).ToString();
-            return maDP;
-        }
+       
 
+        #region events
         private void btnTTDatPhong_Click(object sender, EventArgs e)
         {
             DatPhongDTO d = new DatPhongDTO();
@@ -78,7 +74,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("đặt phòng thất bại !");
             }
         }
-
+        #endregion
         #region Method
         public void LoadComboboxData()
         {
@@ -98,7 +94,18 @@ namespace QuanLyKhachSan
             cbxTTPhongTrong.DisplayMember = "soPhong";
             cbxTTPhongTrong.ValueMember = "maPhong";
         }
+        public string RandomMaDP()
+        {
+            Random r = new Random();
+            string maDP = "DP" + r.Next(10, 99999999).ToString();
+            return maDP;
+        }
         #endregion 
+
+        private void fDatPhong_Load(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

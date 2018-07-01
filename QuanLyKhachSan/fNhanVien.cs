@@ -24,8 +24,12 @@ namespace QuanLyKhachSan
             panel2.Hide();
             txbNVNgLap.Text = "dd/mm/yyyy";
             labelIn.Hide();
+            //LoadBaoCao();
+            //LoadThongKe();
+            btnNVTke.Hide();
         }
 
+        #region event
         private void btnNVTroVe_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -46,6 +50,7 @@ namespace QuanLyKhachSan
         {
             try
             {
+                dtgvLapHDKH.Hide();
                 tongTien = 0;
                 _connection = Connection.ConnectionData();
                 string proc = "sp_XuatThongTinHoaDon";
@@ -78,15 +83,19 @@ namespace QuanLyKhachSan
         {
             try
             {
+                string maHD = RandomMaHD();
+
                 _connection = Connection.ConnectionData();
                 string proc = "sp_LapHoaDon";
                 _command = new SqlCommand(proc);
                 _command.CommandType = CommandType.StoredProcedure;
                 _command.Connection = _connection;
+                _command.Parameters.Add("@maHD", SqlDbType.Char, 20);                
                 _command.Parameters.Add("@maDP", SqlDbType.Char, 10);
                 _command.Parameters.Add("@tongTien", SqlDbType.Int);
                 _command.Parameters.Add("@ngLap", SqlDbType.DateTime);
 
+                _command.Parameters["@maHD"].Value = maHD;
                 _command.Parameters["@maDP"].Value = txbNVMaDP.Text;
                 _command.Parameters["@tongTien"].Value = tongTien;
                 _command.Parameters["@ngLap"].Value = dtpkTTNgttXuat.Value;
@@ -150,7 +159,6 @@ namespace QuanLyKhachSan
             {
                 MessageBox.Show(sqlEr.Message);
             }
-
         }
 
         private void btnNVTimKiem_Click(object sender, EventArgs e)
@@ -220,35 +228,6 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void btnNVLoad_Click(object sender, EventArgs e)
-        {
-            _connection = Connection.ConnectionData();
-
-            string sql =
-                @"SELECT MONTH(ngayThanhToan) AS 'Tháng',YEAR(ngayThanhToan) AS 'Năm',SUM(tongTien) AS 'Tổng doanh thu'
-                    FROM HoaDon
-                    GROUP BY MONTH(ngayThanhToan), YEAR(ngayThanhToan)
-                    ORDER BY MONTH(ngayThanhToan)";
-            _command = new SqlCommand(sql, _connection);
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = _command;
-
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
-
-            dtgvNVBcao.DataSource = bSource;
-
-            adapter.Update(table);
-            _connection.Close();
-
-            label12.Text = "Báo cáo doanh thu";
-            _connection.Close();
-
-        }
 
         private void dtgvNVTKe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -263,7 +242,182 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void btnNVTke_Click_1(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            LoadBaoCao();
+            cbxNVChonThang.Text = "--Chọn tháng";
+            cbxNVChonNam.Text = "--Chọn năm";
+        }
+
+       
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LoadThongKe();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            panel2.Hide();
+            dtgvLapHDKH.Show();
+            LoadLapHDKH();
+        }
+
+        private void dtgvLapHDKH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 || e.ColumnIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                txbNVMaDP.Text = dtgvLapHDKH.Rows[e.RowIndex].Cells["Mã đặt phòng"].Value.ToString();
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            LoadDSHD();
+            labelIn.Show();
+        }
+
+        private void dtgvNVTTHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 || e.ColumnIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Bắt đầu tiến hành in hoá đơn !");
+            }
+        }
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            LoadTTKH();
+        }
+
+        private void btnTTKHTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txbTTKHSoCMND.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập số CMND để tìm kiếm");
+                return;
+            }
+            _connection = Connection.ConnectionData();
+            string sql = @"SELECT hoTen AS 'Họ tên', soCMND AS 'Số CMND', diaChi AS 'Địa chỉ', soDienThoai AS 'Số điện thoại', moTa AS 'Mô tả', email AS 'Email' FROM KhachHang WHERE soCMND = '" + txbTTKHSoCMND.Text + "'";
+            _command = new SqlCommand(sql, _connection);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = _command;
+
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            dtgvTTKH.DataSource = table;
+
+            adapter.Update(table);
+            _connection.Close();
+        }
+
+        #endregion
+
+        #region Function
+
+        public string RandomMaHD()
+        {
+            Random r = new Random();
+            string maHD = "HD" + r.Next(10, 99999999).ToString();
+            return maHD;
+        }
+
+        public void LoadLapHDKH()
+        {
+            try
+            {
+                _connection = Connection.ConnectionData();
+
+                string sql = @"select TOP 100 maDp AS 'Mã đặt phòng', maLoaiPhong AS 'Mã loại phòng', maKH AS 'Mã khách hàng', ngayBatDau AS 'Ngày bắt đầu', ngayTraPhong AS 'Ngày trả phòng', ngayDat AS 'Ngày Đặt', donGia AS 'Đơn giá', moTa AS 'Mô tả', tinhTrang AS 'Tình trạng' FROM DatPhong";
+                _command = new SqlCommand(sql, _connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = _command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                dtgvLapHDKH.DataSource = table;
+
+                adapter.Update(table);
+                _connection.Close();
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void LoadDSHD()
+        {
+            try
+            {
+                _connection = Connection.ConnectionData();
+
+                string sql = @"SELECT TOP 50 maHD AS 'Mã hóa đơn', maKH AS 'Mã khách hàng', ngayThanhToan AS 'Ngày lập', tongTien AS 'Tổng tiền' FROM HoaDon H, DatPhong D WHERE H.MaDP = D.MaDP";
+                _command = new SqlCommand(sql, _connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = _command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                dtgvNVTTHD.DataSource = table;
+
+                adapter.Update(table);
+                _connection.Close();
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void LoadBaoCao()
+        {
+            try
+            {
+                _connection = Connection.ConnectionData();
+
+                string sql =
+                    @"SELECT MONTH(ngayThanhToan) AS 'Tháng',YEAR(ngayThanhToan) AS 'Năm',SUM(tongTien) AS 'Tổng doanh thu'
+                    FROM HoaDon
+                    GROUP BY MONTH(ngayThanhToan), YEAR(ngayThanhToan)
+                    ORDER BY MONTH(ngayThanhToan)";
+                _command = new SqlCommand(sql, _connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = _command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = table;
+
+                dtgvNVBcao.DataSource = bSource;
+
+                adapter.Update(table);
+                _connection.Close();
+                label12.Text = "Báo cáo doanh thu";
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        public void LoadThongKe()
         {
             _connection = Connection.ConnectionData();
             string proc = "sp_ThongKePhongTrong";
@@ -282,8 +436,33 @@ namespace QuanLyKhachSan
             dtgvNVTKe.DataSource = bSource;
 
             adapter.Update(table);
-            label123.Text = "Thống kê số lượng phòng trống";
+            //label123.Text = "Thống kê số lượng phòng trống";
             _connection.Close();
         }
+
+        public void LoadTTKH()
+        {
+            _connection = Connection.ConnectionData();
+
+            string sql = @"SELECT top 100 hoTen AS 'Họ tên', soCMND AS 'Số CMND', diaChi AS 'Địa chỉ', soDienThoai AS 'Số điện thoại', moTa AS 'Mô tả', email AS 'Email' FROM KhachHang ";
+            _command = new SqlCommand(sql, _connection);
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = _command;
+
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            dtgvTTKH.DataSource = table;
+
+            adapter.Update(table);
+            _connection.Close();
+        }
+
+        #endregion 
+
+
+
+        
     }
 }

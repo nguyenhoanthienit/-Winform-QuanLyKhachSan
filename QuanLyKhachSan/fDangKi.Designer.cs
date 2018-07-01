@@ -34,6 +34,8 @@
             this.pictureBox101 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnDKDki = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -60,11 +62,13 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.txbDKNLMkhau = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.labelKTSDT = new System.Windows.Forms.Label();
+            this.labelKTCMND = new System.Windows.Forms.Label();
             this.panel301.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -73,8 +77,6 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel301
@@ -122,7 +124,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.btnDKDki);
@@ -136,15 +137,39 @@
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Location = new System.Drawing.Point(12, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(624, 321);
+            this.panel1.Size = new System.Drawing.Size(624, 354);
             this.panel1.TabIndex = 16;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(297, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 23);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(300, 149);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(21, 23);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkRed;
-            this.label10.Location = new System.Drawing.Point(201, 242);
+            this.label10.Location = new System.Drawing.Point(201, 279);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(223, 20);
             this.label10.TabIndex = 15;
@@ -158,7 +183,8 @@
             this.btnDKDki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDKDki.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnDKDki.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDKDki.Location = new System.Drawing.Point(204, 265);
+            this.btnDKDki.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDKDki.Location = new System.Drawing.Point(204, 302);
             this.btnDKDki.Name = "btnDKDki";
             this.btnDKDki.Size = new System.Drawing.Size(220, 47);
             this.btnDKDki.TabIndex = 9;
@@ -170,7 +196,7 @@
             // 
             this.panel9.Controls.Add(this.txbDKEmail);
             this.panel9.Controls.Add(this.label9);
-            this.panel9.Location = new System.Drawing.Point(343, 165);
+            this.panel9.Location = new System.Drawing.Point(343, 202);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(278, 48);
             this.panel9.TabIndex = 8;
@@ -196,16 +222,18 @@
             // 
             this.panel8.Controls.Add(this.txbDKDC);
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(343, 111);
+            this.panel8.Location = new System.Drawing.Point(343, 135);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(278, 48);
+            this.panel8.Size = new System.Drawing.Size(278, 61);
             this.panel8.TabIndex = 7;
             // 
             // txbDKDC
             // 
-            this.txbDKDC.Location = new System.Drawing.Point(118, 15);
+            this.txbDKDC.Location = new System.Drawing.Point(118, 3);
+            this.txbDKDC.Multiline = true;
             this.txbDKDC.Name = "txbDKDC";
-            this.txbDKDC.Size = new System.Drawing.Size(140, 20);
+            this.txbDKDC.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txbDKDC.Size = new System.Drawing.Size(140, 55);
             this.txbDKDC.TabIndex = 7;
             // 
             // label8
@@ -220,25 +248,27 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.labelKTSDT);
             this.panel7.Controls.Add(this.txbDKDT);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Location = new System.Drawing.Point(343, 57);
+            this.panel7.Location = new System.Drawing.Point(343, 72);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(278, 48);
+            this.panel7.Size = new System.Drawing.Size(278, 57);
             this.panel7.TabIndex = 6;
             // 
             // txbDKDT
             // 
-            this.txbDKDT.Location = new System.Drawing.Point(118, 15);
+            this.txbDKDT.Location = new System.Drawing.Point(118, 8);
             this.txbDKDT.Name = "txbDKDT";
             this.txbDKDT.Size = new System.Drawing.Size(140, 20);
             this.txbDKDT.TabIndex = 6;
+            this.txbDKDT.TextChanged += new System.EventHandler(this.txbDKDT_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 18);
+            this.label7.Location = new System.Drawing.Point(6, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 21);
             this.label7.TabIndex = 2;
@@ -246,11 +276,12 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.labelKTCMND);
             this.panel6.Controls.Add(this.txbDKCMND);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(343, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(278, 48);
+            this.panel6.Size = new System.Drawing.Size(278, 63);
             this.panel6.TabIndex = 5;
             // 
             // txbDKCMND
@@ -259,6 +290,7 @@
             this.txbDKCMND.Name = "txbDKCMND";
             this.txbDKCMND.Size = new System.Drawing.Size(140, 20);
             this.txbDKCMND.TabIndex = 5;
+            this.txbDKCMND.TextChanged += new System.EventHandler(this.txbDKCMND_TextChanged);
             // 
             // label6
             // 
@@ -274,9 +306,9 @@
             // 
             this.panel4.Controls.Add(this.txbDKMkhau);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(12, 111);
+            this.panel4.Location = new System.Drawing.Point(12, 135);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(293, 48);
+            this.panel4.Size = new System.Drawing.Size(325, 48);
             this.panel4.TabIndex = 3;
             // 
             // txbDKMkhau
@@ -301,7 +333,7 @@
             // 
             this.panel3.Controls.Add(this.txbDKDnhap);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(12, 57);
+            this.panel3.Location = new System.Drawing.Point(13, 72);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(293, 48);
             this.panel3.TabIndex = 2;
@@ -351,11 +383,12 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.txbDKNLMkhau);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(3, 165);
+            this.panel5.Location = new System.Drawing.Point(3, 202);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(302, 48);
+            this.panel5.Size = new System.Drawing.Size(334, 48);
             this.panel5.TabIndex = 4;
             // 
             // txbDKNLMkhau
@@ -376,40 +409,40 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Nhập lại mật khẩu";
             // 
-            // pictureBox1
+            // labelKTSDT
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(300, 125);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.labelKTSDT.AutoSize = true;
+            this.labelKTSDT.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKTSDT.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelKTSDT.Location = new System.Drawing.Point(88, 33);
+            this.labelKTSDT.Name = "labelKTSDT";
+            this.labelKTSDT.Size = new System.Drawing.Size(170, 15);
+            this.labelKTSDT.TabIndex = 19;
+            this.labelKTSDT.Text = "*Số điện thoại có 10 hoặc 11 số";
             // 
-            // pictureBox2
+            // labelKTCMND
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(300, 181);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 23);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.labelKTCMND.AutoSize = true;
+            this.labelKTCMND.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKTCMND.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelKTCMND.Location = new System.Drawing.Point(108, 34);
+            this.labelKTCMND.Name = "labelKTCMND";
+            this.labelKTCMND.Size = new System.Drawing.Size(150, 15);
+            this.labelKTCMND.TabIndex = 20;
+            this.labelKTCMND.Text = "*Số CMND có 9 hoặc 12 số";
             // 
             // fDangKi
             // 
+            this.AcceptButton = this.btnDKDki;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(648, 476);
+            this.ClientSize = new System.Drawing.Size(648, 502);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel301);
             this.Controls.Add(this.label2);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "fDangKi";
@@ -420,6 +453,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox101)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -436,8 +471,6 @@
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,5 +511,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelKTSDT;
+        private System.Windows.Forms.Label labelKTCMND;
     }
 }
